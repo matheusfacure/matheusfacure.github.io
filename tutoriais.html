@@ -1,0 +1,22 @@
+---
+layout: page
+title: "Tutoriais"
+---
+
+{% for post in site.posts reversed %}
+    {% if post.tags contains 'Tutorial' %}
+        <div class="post-preview" style="margin-top: 5%;">
+            <a href="{{ post.url | prepend: site.baseurl }}">
+                <h2 class="post-title">            
+                    {{ post.title }}
+                </h2>
+                {% if post.subtitle %}
+                <h3 class="post-subtitle" style="font-weight: 300; font-size:20px; font-family: Helvetica;">
+                    {{ post.subtitle }}
+                </h3>
+                {% endif %}
+            </a>
+        </div>
+    <hr>
+    {% endif %}
+{% endfor %}

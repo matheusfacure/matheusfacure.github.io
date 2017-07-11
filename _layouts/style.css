@@ -1,0 +1,10 @@
+{% include css/bootstrap.min.css %}
+{% include css/agency.css %}
+{% include css/syntax.css %}
+
+
+
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover {
+	color: #000;
+}

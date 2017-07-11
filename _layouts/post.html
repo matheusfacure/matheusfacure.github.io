@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    
+{% include head.html %}
+
+<body>
+{% include nav.html %}
+
+<header style="background-image: url('{{ site.baseurl }}{% if page.header-img %}{{ page.header-img }}{% else %}/img/fundo_main.png{% endif %}')">
+        <div class="container">
+            <div class="intro-text">
+                <div class="intro-heading">{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}
+                    {% if page.subtitle %}
+                    <h2 class="subheading">{{ page.subtitle }}</h2>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+</header>
+
+{% include analytics.html %}
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row" style="margin-top: 1%; text-align: right;">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <h5><em>Postado em {{ page.date | date: "%-d/%m/%Y" }}</em><h5>
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            {{ content }}
+
+                
+            {% include disqus.html %}
+
+            </div>
+        </div>
+    </div>
+</article>
+
+
+<hr>
+
+
+    
+    {% include footer.html %}
+    {% include js.html %}
+    
+</body>
+
+</html>
+
+<!-- Post Header -->
+<header class="intro-header" style="background-image: url('{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>{{ page.title }}</h1>
+                    {% if page.subtitle %}
+                    <h2 class="subheading">{{ page.subtitle }}</h2>
+                    {% endif %}
+                    <span class="meta">Postado por {% if page.author %}{{ page.author }}{% else %}{{ site.title }}{% endif %} em {{ page.date | date: "%-d/%m/%Y" }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+

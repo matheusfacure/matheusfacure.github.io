@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    
+{% include head.html %}
+
+<body>
+
+{% include nav.html %}
+
+<!-- Header -->
+<header style="background-image: url('{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{img/dark-ann.jpg}{% endif %}')">
+    <div class="container">
+        <div class="intro-text">
+            <div class="intro-heading">
+            {% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}
+            <hr style="height:5px;background-color: #fff;">
+            <span class="subheading"><h3>{{ page.subtitle }}<h3></span>
+            </div>
+        </div>
+    </div>
+</header>
+{% include analytics.html %}
+<!-- Post Content -->
+<article style="margin-top: 5%;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+                {{ content }}
+
+                <hr>
+            
+            {% include disqus.html %}
+
+            </div>
+        </div>
+    </div>
+</article>
+
+
+{% include footer.html %}
+{% include modals.html %}
+{% include js.html %}
+
+</body>
+</html>
