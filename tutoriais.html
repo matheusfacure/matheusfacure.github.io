@@ -3,9 +3,13 @@ layout: page
 title: "Tutoriais"
 ---
 
+<div style="margin-top: 5%"><h3 class="post-subtitle" style="font-weight: 300; font-size:20px; font-family: Helvetica;">
+<strong>NOTA DE ESCLARECIMENTO:</strong> Esta série de tutoriais é elaborada numa estrutura linear, de forma que num tutorial eu pressuponho conhecimento abordados nos anteriores. Caso você seja iniciante no assunto, recomendo fortemente que siga os tutoriais na ordem em que eles são listados abaixo.<h3></div>
+
+
 {% for post in site.posts reversed %}
     {% if post.tags contains 'Tutorial' %}
-        <div class="post-preview" style="margin-top: 5%;">
+        <div class="post-preview" style="margin-top: 2%;">
             <a href="{{ post.url | prepend: site.baseurl }}">
                 <h2 class="post-title">            
                     {{ post.title }}
