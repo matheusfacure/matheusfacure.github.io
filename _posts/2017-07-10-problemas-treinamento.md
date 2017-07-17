@@ -76,13 +76,13 @@ Podemos usar a funcionalidade de autodiferenciação do TensorFlow para calcular
 
 Quando iniciamos o treinamento da rede neural descrita acima, na primeira iteração, os derivadas das quatro camadas apresentam as seguintes distribuições.
 
-<img class="img-responsive center-block thumbnail" src="/img/tutorial/grad_hist_start.png" alt="4-layer-net"/>
+<img class="img-responsive center-block thumbnail" src="/img/tutorial/grad_hist_start.png" alt="hist1"/>
 
 Como previsto, a distribuição dos derivadas da primeira camada é bastante centrado em zero, sendo que nem os extremos das caudas da distribuição chegam em \\(\pm 0.025\\). A medida que progredimos para camadas mais ao final da rede, a distribuição dos derivadas fica mais larga. Nesse caso, o problema da instabilidade dos derivadas faz com que os parâmetros da primeira sejam atualizados de maneira quase que insignificante, dificultando o seu treinamento. 
 
 Após algumas iterações de treino, a distribuição dos derivadas da primeira camada continuam próximos de zero. A distribuição das outras camadas também ficam mais centradas em zero, mas isso é esperado, conforme vimos no [tutorial de gradiente descendente](https://matheusfacure.github.io/2017/02/20/MQO-Gradiente-Descendente/). Apenas relembrando, conforme o treinamento progride e vamos chegando em regiões de custo menor, onde a inclinação da superfície também é menor, diminuindo o gradiente. Assim, quanto mais avançado estiver o treinamento, menor tenderá a ser o gradiente. Isso só não será sempre verdade devido a não convexidade da superfície de custo das redes neurais.
 
-<img class="img-responsive center-block thumbnail" src="/img/tutorial/activations/sigmoid.png" alt="sigmoid"/>
+<img class="img-responsive center-block thumbnail" src="/img/tutorial/grad_hist_end.png" alt="hist2"/>
 
 Nos próximos tutoriais, veremos algumas técnicas para mitigar o problema dos derivadas explodindo ou desvanecendo. Pelas mudanças que fizemos na rede neural aqui descrita relativamente as que havíamos implementado nos tutoriais passados, você já deve ter adivinhado sobre o que tratarão essas técnicas. Adiantando um pouco, dois métodos para lidar com a instabilidade dos derivadas envolvem mudanças na função de ativação (não linearidade) das camadas ocultas e mudanças na inicialização dos parâmetros. 
 
