@@ -82,7 +82,7 @@ Como previsto, a distribuição dos derivadas da primeira camada é bastante cen
 
 Após algumas iterações de treino, a distribuição dos derivadas da primeira camada continuam próximos de zero. A distribuição das outras camadas também ficam mais centradas em zero, mas isso é esperado, conforme vimos no [tutorial de gradiente descendente](https://matheusfacure.github.io/2017/02/20/MQO-Gradiente-Descendente/). Apenas relembrando, conforme o treinamento progride e vamos chegando em regiões de custo menor, onde a inclinação da superfície também é menor, diminuindo o gradiente. Assim, quanto mais avançado estiver o treinamento, menor tenderá a ser o gradiente. Isso só não será sempre verdade devido a não convexidade da superfície de custo das redes neurais.
 
-<img class="img-responsive center-block thumbnail" src="/img/tutorial/grad_hist_end.png" alt="4-layer-net"/>
+<img class="img-responsive center-block thumbnail" src="/img/tutorial/activations/sigmoid.png" alt="sigmoid"/>
 
 Nos próximos tutoriais, veremos algumas técnicas para mitigar o problema dos derivadas explodindo ou desvanecendo. Pelas mudanças que fizemos na rede neural aqui descrita relativamente as que havíamos implementado nos tutoriais passados, você já deve ter adivinhado sobre o que tratarão essas técnicas. Adiantando um pouco, dois métodos para lidar com a instabilidade dos derivadas envolvem mudanças na função de ativação (não linearidade) das camadas ocultas e mudanças na inicialização dos parâmetros. 
 
@@ -90,4 +90,5 @@ Nos próximos tutoriais, veremos algumas técnicas para mitigar o problema dos d
 
 <ul class="pager">
   <li class="previous"><a href="https://matheusfacure.github.io/2017/06/22/gan-vanilla/">Anterior</a></li>
+  <li class="next"><a href="https://matheusfacure.github.io/2017/07/12/activ-func/">Próximo</a></li>
 </ul>
