@@ -12,6 +12,7 @@ header-img: "img/dark-ann.jpg"
 <div class="row">
 <ul class="nav nav-tabs navbar-right">
     <li><a href="/2017/05/15/deep-ff-ann/">TensorFlow</a></li>
+    <li><a href="/2017/05/15/deep-ff-ann-pytorch/">PyTorch</a></li>
     <li class="active"><a href="#">H2O (R)</a></li>
 </ul>
 </div>
@@ -22,7 +23,7 @@ Esta é uma versão alternativa do tutorial em TensorFlow. Assim sendo, vou pres
 
 ## Introdução 
 
-Vamos usar a linguagem R de programação estatistifica e a biblioteca [H2O](https://www.h2o.ai/) para Deep Learning. Você verá que essa biblioteca torna a construção e treinamento de redes neurais muito mais simples do que o TensorFlow. Por outro lado, ela é extremamente abstrata e retira um pouco do controle que temos sobre a construção de modelos de Deep Learning. Eu pessoalmente prefiro o  TensorFlow, mas coloco esse tutorial aqui para que você possa escolher por conta própria qual delas prefere.
+Vamos usar a linguagem R de programação estatistifica e a biblioteca [H2O](https://www.h2o.ai/) para Deep Learning. Você verá que essa biblioteca torna a construção e treinamento de redes neurais muito mais simples do que o TensorFlow. Por outro lado, ela é extremamente abstrata e retira um pouco do controle que temos sobre a construção de modelos de Deep Learning. Eu pessoalmente prefiro o TensorFlow, mas coloco esse tutorial aqui para que você possa escolher por conta própria qual delas prefere.
 
 ## Construindo uma rede neural *feedforward* densa
 
@@ -30,7 +31,7 @@ Baixe os dados **de treino** da base MINIST no [Kaggle](https://www.kaggle.com/s
 
 ```r
 setwd("~/Downloads/") # muda o diretório para a pasta de Downloads  
-dataset =  read.csv("train.csv") # lê a base de dados
+dataset = read.csv("train.csv") # lê a base de dados
 dataset$label = as.factor(dataset$label) # formata a variável dependente
 ```
 
@@ -46,7 +47,7 @@ test = subset(dataset, split==FALSE)
 Antes de prosseguir, vamos conferir se os dados foram lidos e processados corretamente. Para isso, vamos ver graficamente algumas imagens dos dígitos MNIST junto com suas respectivas classes.
 
 ```r
-par( mfrow = c(10,10), mai = c(0,0,0,0))
+par(mfrow = c(10,10), mai = c(0,0,0,0))
 for(i in 1:100){
     y = as.matrix(train[i, 2:785])
     dim(y) = c(28, 28)

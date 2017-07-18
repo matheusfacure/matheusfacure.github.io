@@ -53,7 +53,7 @@ O [TensorFlow](https://www.tensorflow.org/) é uma biblioteca de computação nu
 
 Se você está usando Linux, a instalação do TensorFlow deve ser tão simples como `pip3 install tensorflow`. Contudo, isso pode variar de sistema operacional para sistema operacional. Além disso, a instalação pode ser mais complicada se deseja-se utilizar suporte para GPU. Assim, eu prefiro recomendar a [referência oficial do TensorFlow para instalação](https://www.tensorflow.org/install/). Aqui, vamos utilizar a versão 1.1.0 do TensorFlow e não garanto que o que será desenvolvido se estenderá às outras versões sem necessidade de adaptações.
 
-<img src="/img/tutorial/tf.jpg" alt="avatar" class="img-responsive thumbnail pull-right" style="margin-left:3%; width: 40%;">
+<img src="/img/tutorial/tf.jpg" alt="tf" class="img-responsive thumbnail pull-right" style="margin-left:3%; width: 40%;">
 
 ## Tensores <a name="tensor"></a>
 Qualquer forma de dados no TensorFlow é representada pela estrutura de tensores, que são simplesmente *arrays* ou listas com \\(n\\) eixos. Em termos de álgebra linear, tensores são generalizações de matrizes. Por exemplo, um vetor é um tensor com uma dimensão ou um eixo. Uma matriz é um tensor com duas dimensões ou dois eixos. Uma pilha de matrizes é um tensor com  3 dimensões ou três eixos e assim por diante. É preciso ter cuidado para não confundir dimensões de um tensor – o número de eixos da estrutura de dados – com dimensão dos dados – o número de colunas ou variáveis em uma tabela de dados.
@@ -228,11 +228,7 @@ Antes de prosseguir, vamos relembrar a estrutura desenvolvida aqui para um progr
       <li>Fazer previsões e reportar métrica de performance</li>
     </ol>
     </li>
-</ol>
-
-
-
-    
+</ol>  
 
 O que vimos até aqui aborda todo o conteúdo essencial do TensorFlow e com pequenas mudanças no código acima já será possível treinar redes neurais. Particularmente, nós vimos que o TensorFlow mesmo sendo feito principalmente para Python é quase uma linguagem de computação em si, com regras próprias e bem diferentes das do Python. E como toda linguagem de computação, no TensorFlow há varias formas de realizar a mesma tarefa. Acima, nós só abordamos uma, mas vale a pena destacar alguns comandos equivalentes bem comuns, principalmente para facilitar na leitura de códigos de outras pessoas. Começando pela criação do grafo.
 

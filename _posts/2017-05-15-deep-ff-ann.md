@@ -12,6 +12,7 @@ header-img: "img/dark-ann.jpg"
 <div class="row">
 <ul class="nav nav-tabs navbar-right">
     <li class="active"><a href="#">TensorFlow</a></li>
+    <li><a href="/2017/05/15/deep-ff-ann-pytorch/">PyTorch</a></li>
     <li><a href="/2017/05/15/deep-ff-ann-h2o/">H2O (R)</a></li>
 </ul>
 </div>
