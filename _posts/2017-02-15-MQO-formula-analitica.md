@@ -4,6 +4,7 @@ comments: true
 title: Regressão Linear MQO
 subtitle: "Aprenda a implementar o modelo estatístico mais utilizado nas ciências sociais."
 date: 2017-02-15
+update: 2017-07-19
 tags: [Tutorial]
 author: "Matheus Facure"
 header-img: "img/dark-ann.jpg"
@@ -23,16 +24,15 @@ header-img: "img/dark-ann.jpg"
 
 <p>Vou pressupor que você tenha os conhecimentos especificados no tutorial sobre <a href="https://matheusfacure.github.io/2017/01/15/pre-req-ml/">matemática e programação para aprendizado de máquina</a>, isto é, que sabe cálculo (derivadas), o básico de álgebra linear, de estatística e de programação.</p>
 
-
 <h2 id="intuicao">Intuição</h2>
 <p>Vamos supor que tenhamos dados em tabela sobre duas variáveis: x e y. Se colocarmos cada par (x,y) em um gráfico, teremos uma figura como a seguinte:</p>
 
-<img class="img-responsive center-block thumbnail" src="/img/tutorial/scatter.png" alt="scatter" width="388" height="291" />
+<img class="img-responsive center-block thumbnail" src="/img/tutorial/regr_lin_mqo/scatter.png" alt="scatter" width="388" height="291" />
 
 <p>O que o algoritmo de regressão linear faz é simplesmente achar a reta que melhor se encaixa entre os pontos:</p>
-<p>Assim, podemos prever (com erro) um valor de y dado um valor de x. Por exemplo, nós não temos uma observação em que x=1, mas gostaríamos de prever qual seria o valor de y caso x fosse 1. Basta então olhar na linha qual valor de y quando x assume o valor 1. Na imagem acima, y seria aproximadamente 6 (ponto amarelo).</p>
+<p>Assim, podemos prever (com erro) um valor de y dado um valor de x. Por exemplo, nós não temos uma observação em que \(x=1\), mas gostaríamos de prever qual seria o valor de y caso x fosse 1. Basta então olhar na linha qual valor de y quando x assume o valor 1. Na imagem acima, y seria aproximadamente 6 (ponto amarelo).</p>
 
-<img class="img-responsive center-block thumbnail" src="/img/tutorial/figure_11.png" alt="figure_1" width="388" height="291" />
+<img class="img-responsive center-block thumbnail" src="/img/tutorial/regr_lin_mqo/scatter_line.png" alt="figure_1" width="388" height="291" />
 
 <p>Ok. Esse exemplo é bem simples e meramente ilustrativo. Suponha agora que y não dependa mais apenas de x, mas de x e z. Bem, nesse caso, teríamos um gráfico em 3D e a regressão linear acharia o plano que melhor se encaixa nos dados. E para mais dimensões? Digamos que y dependa de 100 variáveis. Nós não podemos mais visualizar esse caso, mas sabemos que não é muito diferente dos casos 2D ou 3D, só que agora a regressão linear acha o hiperplano que melhor se encaixa nos dados. Se isso está um pouco abstrato e difícil de visualizar, pense  sempre em 3D quando trabalhando com muitas dimensões. É um truque muito útil que eu aprendi em um vídeo do <a href="https://en.wikipedia.org/wiki/Geoffrey_Hinton">professor de Geoffrey Hinton</a> e, segundo ele, todo mundo faz isso: quando tentar visualizar 100 dimensões, por exemplo, pense em 3D e grite para si mesmo "100D" e você conseguirá abstrair grandes dimensionalidades.</p>
 

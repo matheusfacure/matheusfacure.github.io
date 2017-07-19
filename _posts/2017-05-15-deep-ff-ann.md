@@ -2,8 +2,8 @@
 layout: tutorial
 tags: [Tutorial]
 comments: true
-title: Redes Neurais Feedforward Densas
-subtitle: "Implemente modelos básicos de Deep Learning usando TensorFlow."
+title: Redes Neurais <em>Feedforward</em> Densas
+subtitle: "Implemente modelos básicos de <em>Deep Learning</em> usando TensorFlow."
 date: 2017-05-15
 author: "Matheus Facure"
 header-img: "img/dark-ann.jpg"

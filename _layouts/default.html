@@ -2,7 +2,9 @@
 <html lang="pt-br">
     
 {% include head.html %}
-{% include analytics.html %}
+{% if jekyll.environment == 'production' %}
+	{% include analytics.html %}
+{% endif %}
 <body>
 
     {% include header.html %}

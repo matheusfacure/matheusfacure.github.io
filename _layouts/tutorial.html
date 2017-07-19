@@ -2,9 +2,10 @@
 <html lang="pt-br">
     
 {% include head.html %}
-
+{% if jekyll.environment == 'production' %}
+    {% include analytics.html %}
+{% endif %}
 <body>
-
 {% include nav.html %}
 
 <!-- Header -->
@@ -21,8 +22,14 @@
 </header>
 {% include analytics.html %}
 <!-- Post Content -->
-<article style="margin-top: 5%;">
+<article>
     <div class="container">
+        <div class="row" style="margin-top: 1%; text-align: right;">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <h5><em>Postado em {{ page.date | date: "%-d/%m/%Y" }}</em><h5>
+            {% if page.update %}<h5><em>Atualizado em {{ page.update | date: "%-d/%m/%Y" }}</em><h5>{% endif %}
+        </div>
+        </div>
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 

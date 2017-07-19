@@ -2,7 +2,9 @@
 <html lang="pt-br">
     
 {% include head.html %}
-
+{% if jekyll.environment == 'production' %}
+    {% include analytics.html %}
+{% endif %}
 <body>
 {% include nav.html %}
 
