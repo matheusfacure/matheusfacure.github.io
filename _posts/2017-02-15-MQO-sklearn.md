@@ -3,7 +3,7 @@ layout: tutorial
 comments: true
 title: Aplicando Regressão Linear com <em>Scikit-Learn</em> 
 subtitle: "Aprenda como aplicar esse poderoso modelo estatístico com menos de 15 linhas de código."
-date: 2017-02-15
+date: 2017-07-19
 tags: [Tutorial-alt]
 author: "Matheus Facure"
 header-img: "img/dark-ann.jpg"
