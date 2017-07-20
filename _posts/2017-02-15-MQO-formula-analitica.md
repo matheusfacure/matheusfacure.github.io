@@ -10,6 +10,12 @@ author: "Matheus Facure"
 header-img: "img/dark-ann.jpg"
 ---
 
+<div class="row">
+<ul class="nav nav-tabs navbar-left">
+    <li class="active"><a href="">Numpy</a></li>
+    <li><a href="/2017/02/15/MQO-sklearn/">Scikit-Learn</a></li>
+</ul>
+</div>
  
 <h2 id="Regressão-Linear">Conteúdo</h2>
 <ul>
@@ -30,7 +36,7 @@ header-img: "img/dark-ann.jpg"
 <img class="img-responsive center-block thumbnail" src="/img/tutorial/regr_lin_mqo/scatter.png" alt="scatter" width="388" height="291" />
 
 <p>O que o algoritmo de regressão linear faz é simplesmente achar a reta que melhor se encaixa entre os pontos:</p>
-<p>Assim, podemos prever (com erro) um valor de y dado um valor de x. Por exemplo, nós não temos uma observação em que \(x=1\), mas gostaríamos de prever qual seria o valor de y caso x fosse 1. Basta então olhar na linha qual valor de y quando x assume o valor 1. Na imagem acima, y seria aproximadamente 6 (ponto amarelo).</p>
+<p>Assim, podemos prever (com erro) um valor de y dado um valor de x. Por exemplo, nós não temos uma observação em que \(x=1\), mas gostaríamos de prever qual seria o valor de y caso x fosse 1. Basta então olhar na linha qual valor de y quando x assume o valor 1. Na imagem acima, y seria aproximadamente 2.5 (ponto amarelo).</p>
 
 <img class="img-responsive center-block thumbnail" src="/img/tutorial/regr_lin_mqo/scatter_line.png" alt="figure_1" width="388" height="291" />
 
@@ -86,8 +92,9 @@ y_1 \\
 y_n \\
 \end{bmatrix}$$
 
-<p>\( X_{nd} \pmb{w}_{d1} + \pmb{\epsilon}_{n1} = \pmb{y}_{n1} \)</p>
-<p>Para estimar a equação acima, usaremos a técnica de Mínimos Quadrados Ordinários (MQO): queremos achar os \( \pmb{\hat{w}}\) que minimizam os \( n\) \( \varepsilon^2 \), ou, na forma de vetor, \( \pmb{\epsilon}^T \pmb{\epsilon}\). Por que minimizar os erros quadrados? Lembra de como nos pré-requisito eu disse que muitas vezes os algoritmos de Aprendizado de Máquina são encarados como problemas de minimização de função custo? Então, nesse caso, nossa função custo é \( L = \pmb{\epsilon}^T \pmb{\epsilon}\). Um nome comum dessa função é o custo quadrático L2, pois nesse caso o custo é o quadrado da norma L2 do vetor \( \pmb{\epsilon}\). Note que nós poderíamos usar também a norma L1 do mesmo vetor como função custo. Ou ainda, poderíamos usar outras funções que adicionam uma penalidade também para o tamanho de \( \pmb{\hat{w}}\), como acontece nos algoritmos de regressão <a href="https://en.wikipedia.org/wiki/Tikhonov_regularization">Ridge</a> ou <a href="https://en.wikipedia.org/wiki/Lasso_(statistics)">Lasso</a>, mas isso terá que ficar para outro tutorial. Por hora, a soma dos mínimos quadrados bastará como função custo, até porque ela tem a vantagem de deixar a matemática muito mais simples:</p>
+$$X_{nd} \pmb{w}_{d1} + \pmb{\epsilon}_{n1} = \pmb{y}_{n1}$$
+
+<p>Para estimar a equação acima, usaremos a técnica de Mínimos Quadrados Ordinários (MQO): queremos achar os \( \pmb{\hat{w}}\) que minimizam os \( n\) \( \varepsilon^2 \), ou, na forma de vetor, \( \pmb{\epsilon}^T \pmb{\epsilon}\). Por que minimizar os erros quadrados? Assim como todo algoritmo de Aprendizado de Máquina, regressão linear também pode ser encarada como problemas de minimização de função custo. Então, nesse caso, nossa função custo é \( L = \pmb{\epsilon}^T \pmb{\epsilon}\). Um nome comum dessa função é o custo quadrático L2, pois nesse caso o custo é o quadrado da norma L2 do vetor \( \pmb{\epsilon}\). Note que nós poderíamos usar também a norma L1 do mesmo vetor como função custo. Ou ainda, poderíamos usar outras funções que adicionam uma penalidade também para o tamanho de \( \pmb{\hat{w}}\), como acontece nos algoritmos de regressão <a href="https://en.wikipedia.org/wiki/Tikhonov_regularization">Ridge</a> ou <a href="https://en.wikipedia.org/wiki/Lasso_(statistics)">Lasso</a>, mas isso terá que ficar para outro tutorial. Por hora, a soma dos mínimos quadrados bastará como função custo, até porque ela tem a vantagem de deixar a matemática muito mais simples:</p>
 
 $$ \pmb{\epsilon}^T  \pmb{\epsilon} = (\pmb{y} - \pmb{\hat{w}}X)^T(\pmb{y} - \pmb{\hat{w}} X) \\= \pmb{y}^T \pmb{y} - \pmb{\hat{w}}^T X^T \pmb{y} - \pmb{y}^T X \pmb{\hat{w}} + \pmb{\hat{w}} X^T X \pmb{\hat{w}} \\= \pmb{y}^T \pmb{y} - 2\pmb{\hat{w}}^T X^T \pmb{y} + \pmb{\hat{w}} X^T X \pmb{\hat{w}} $$
 
@@ -106,7 +113,7 @@ $$ \pmb{\hat{w}} = (X^T X)^{-1} X^T \pmb{y} $$
 <p>3) É possível chegar em uma fórmula para os vários \( \hat{w_i}\) apenas com cálculo multivariado, sem usar álgebra linear. Para os que tem dificuldade com álgebra linear (como é o meu caso), esse método parece mais atraente. No entanto, ele tem uma notação muito mais carregada de somatórios. Da minha experiência aprendendo isso, acho que vale muito a pena investir tempo para entender bem álgebra linear, pois todos os algoritmos de Aprendizado de Máquina ficam muito mais fáceis depois. Caso queira ver como resolver a equação de otimização do algoritmo de MQO sem usar álgebra linear, eu sugiro o livro do <a href="https://www.amazon.com.br/Introdu%C3%A7%C3%A3o-Econometria-Uma-Abordagem-Moderna/dp/8522104468/ref=sr_1_1/156-3678212-7923752?ie=UTF8&qid=1486067848&sr=8-1&keywords=econometria">Wooldrige</a>.</p>
 
 <h2 id="desenhando_e_testando_o_algoritmo">Desenhando e testando o algoritmo</h2>
-<p>Resumindo o que vimos acima de forma intuitiva, podemos dizer que o algoritmo de regressão linear por MQO acha uma linha, plano ou hiperplano que passa entre os dados de forma que a distância quadrada entre os pontos e a linha, plano ou hiperplano seja minimizada. Vamos agora implementar esse algoritmo em Python.</p>
+<p>Resumindo o que vimos acima de forma intuitiva, podemos dizer que o algoritmo de regressão linear por MQO acha uma linha, plano ou hiperplano que passa entre os dados de forma que a distância quadrada entre os pontos e a linha, plano ou hiperplano seja minimizada. Vamos agora implementar esse algoritmo em Python. Para realmente entender a mecânica do algoritmo, vamos implementá-lo usando apenas Numpy, um pacote de computação numérica. Isso será feito apenas por motivos pedagógicos e, na prática, recomendo aplicar regressão linear partindo de uma implementação já existente. Para isso, veja o <a href="/2017/02/15/MQO-sklearn/">tutorial de regressão linear com Scikit-Learn</a>.</p>
 
 {% highlight python %}
 
@@ -116,9 +123,7 @@ from sklearn import linear_model, model_selection, datasets
 import matplotlib.pyplot as plt # para fazer gráficos
 from matplotlib import style
 from time import time # para ver quanto tempo demora
-style.use('ggplot') # para gráficos bonitinhos
 np.random.seed(1) # para resultados consistentes 
-
 
 class linear_regr(object):
 
@@ -252,7 +257,7 @@ Média do erro relativo: 0.122915533711
 
 <p>Nada mal... O preço previsto é, na média, apenas 12,2% diferente do preço real/observado. Note que o algoritmo aprendeu os parâmetros \( \hat{\pmb{w}}\) com uma parte dos dados e usou-os para prever dados que nunca tinha visto, mostrando uma boa capacidade de generalização.</p>
 
-<p>O nosso algoritmo produz os mesmos resultados do de mercado, então podemos saber que não erramos nada. Além disso, o nosso algoritmo é mais rápido que o de mercado, mas essa diferença é insignificante, em termos práticos. Cabe aqui uma observação: <strong>não reinvente a roda!</strong> Na prática, se existe um bom algoritmo já feito, use-o! Não é preciso fazer o algoritmo do zero sempre, basta importá-lo do <a href="http://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html">sklearn</a>! Aqui, estamos recriando os algoritmos apenas para melhor entendimento de como ele funciona, mas não com intenção de usar nossa criação na prática. Além disso, os algoritmos já pronto são muuuito melhores e mais rápidos que os nossos. O modelo de regressão linear é apenas uma exceção devido à sua simplicidade</p>
+<p> Para comparação, utilizamos um modelo de regressão linear implementada no módulo  <a href="http://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html">Scikit-Learn</a>, ao qual chamamos “de mercado”. O nosso algoritmo produz os mesmos resultados do de mercado, então podemos saber que não erramos nada. Além disso, o nosso algoritmo é mais rápido, mas essa diferença é insignificante, em termos práticos.
 
 <h2 id="consideracoes_finais">Considerações Finais</h2>
 <p>Eu considero o algoritmo de regressão linear como a base da ciência de modelagem estatística. Embora muito simples, regressão linear normalmente já te leva bem longe em termos de qualidade de previsão, enquanto os algoritmos de Aprendizado de Máquina mais complexos só fornecem uma melhora marginal em cima da qualidade adquirida com regressão linear. Assim sendo, termino com alguns conselhos práticos para usá-la.</p>
@@ -264,8 +269,7 @@ Média do erro relativo: 0.122915533711
 </ol>
 <p>Vale uma nota de atenção: aqui só podemos abordar regressão linear brevemente. Ainda há problemas de inferência (saber se os coeficientes são estatisticamente significantes), de interpretação em outras escalas, de hipóteses assumidas e do que fazer quando tais hipóteses são violadas. Tenha isso em mente na hora de usá-lo! Muita coisa ficou incompleta aqui.</p>
 
-  
-***
+<hr>
 
 <ul class="pager">
   <li class="previous"><a href="https://matheusfacure.github.io/2017/01/15/pre-req-ml/">Anterior</a></li>
