@@ -2,9 +2,16 @@
 {% include css/agency.css %}
 {% include css/syntax.css %}
 
-
-
 .nav-tabs > li.active > a,
 .nav-tabs > li.active > a:hover {
 	color: #000;
+}
+
+.post-adv-preview > a {
+  color: #450206b3;
+}
+.post-adv-preview > a:hover,
+.post-adv-preview > a:focus {
+  text-decoration: none;
+  color: #fc645f;
 }

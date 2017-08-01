@@ -3,8 +3,9 @@ layout: tutorial
 tags: [Tutorial]
 comments: true
 title: TensorFlow Detalhado
-subtitle: "Entendendo como melhor organizar um código TensorFlow"
+subtitle: "Entendendo como melhor organizar um código TensorFlow."
 date: 2017-06-10
+true-dt: 2017-06-15
 author: "Matheus Facure"
 header-img: "img/dark-ann.jpg"
 ---

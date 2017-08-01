@@ -5,6 +5,7 @@ comments: true
 title: Redes Neurais Feedforward Densas
 subtitle: "Implemente modelos básicos de Deep Learning usando R e H2O."
 date: 2017-05-15
+true-dt: 2017-07-03
 author: "Matheus Facure"
 header-img: "img/dark-ann.jpg"
 ---

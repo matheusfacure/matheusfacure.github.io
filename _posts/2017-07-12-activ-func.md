@@ -5,6 +5,7 @@ comments: true
 title: Funções de Ativação
 subtitle: "Entendendo a importância da ativação correta nas redes neurais."
 date: 2017-07-12
+true-dt: 2017-07-12
 author: "Matheus Facure"
 header-img: "img/dark-ann.jpg"
 ---

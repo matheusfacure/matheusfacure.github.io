@@ -2,8 +2,9 @@
 layout: tutorial
 comments: true
 title: Funções Custo para Regressão
-subtitle: "Entendendo as funções custo ou objetivo e como AM difere de otimização pura"
+subtitle: "Entendendo as funções custo ou objetivo e como AM difere de otimização pura."
 date: 2017-03-03
+true-dt: 2017-05-25
 tags: [Tutorial]
 author: "Matheus Facure"
 header-img: "img/dark-ann.jpg"

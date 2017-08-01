@@ -870,7 +870,7 @@ body {
 .post-preview > a:hover,
 .post-preview > a:focus {
   text-decoration: none;
-  color: #0085a1;
+  color: #fc645f;
 }
 .post-preview > a > .post-title {
   font-size: 30px;

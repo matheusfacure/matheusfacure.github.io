@@ -5,6 +5,7 @@ comments: true
 title: Redes Neurais <em>Feedforward</em> Densas
 subtitle: "Implemente modelos básicos de <em>Deep Learning</em> usando TensorFlow."
 date: 2017-05-15
+true-dt: 2017-05-30
 author: "Matheus Facure"
 header-img: "img/dark-ann.jpg"
 ---

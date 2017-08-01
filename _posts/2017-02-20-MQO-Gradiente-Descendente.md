@@ -4,6 +4,7 @@ comments: true
 title: Gradiente Descendente
 subtitle: "Um método poderoso e flexível para otimização iterativa."
 date: 2017-02-20
+true-dt: 2017-02-20
 tags: [Tutorial]
 author: "Matheus Facure"
 header-img: "img/dark-ann.jpg"

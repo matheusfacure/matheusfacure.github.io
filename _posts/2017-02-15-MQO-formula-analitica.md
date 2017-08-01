@@ -4,6 +4,7 @@ comments: true
 title: Regressão Linear MQO
 subtitle: "Aprenda a implementar o modelo estatístico mais utilizado nas ciências sociais."
 date: 2017-02-15
+true-dt: 2017-02-15
 update: 2017-07-19
 tags: [Tutorial]
 author: "Matheus Facure"
@@ -13,7 +14,7 @@ header-img: "img/dark-ann.jpg"
 <div class="row">
 <ul class="nav nav-tabs navbar-left">
     <li class="active"><a href="">Numpy</a></li>
-    <li><a href="/2017/02/15/MQO-sklearn/">Scikit-Learn</a></li>
+    <li><a href="/2017/07/19/MQO-sklearn/">Scikit-Learn</a></li>
 </ul>
 </div>
  
