@@ -103,5 +103,5 @@ Para mais detalhes sobre regressão quantílica, sugiro [esta postagem](https://
 
 <ul class="pager">
   <li class="previous"><a href="https://matheusfacure.github.io/2017/03/01/regr-poli/">Anterior</a></li>
-  <li class="next"><a href="https://matheusfacure.github.io/2017/03/05/ann-intro/">Próximo</a></li>
+  <li class="next"><a href="/2017/03/04/bernoulli-bandits-thompson//">Próximo</a></li>
 </ul>
