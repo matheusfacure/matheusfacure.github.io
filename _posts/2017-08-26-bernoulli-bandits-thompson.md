@@ -22,12 +22,12 @@ header-img: "img/dark-ann.jpg"
 
 Antes de procedemos com o algoritmo, vamos entender um dos problemas que ele se propõe a resolver. Segundo a literatura, máquinas caça-níqueis (ou *slot machines*) são conhecidas como "bandidos" por roubar o dinheiro de quem aposta nela. Imagine agora um cenário com \\(n\\) caça-níqueis, cada uma com uma distribuição de probabilidade de sucesso diferente. Um apostador se depara com essas máquinas sem saber qual delas lhe dará mais chances de ganhar dinheiro. Para descobrir isso, o apostador terá que testá-las puxando as alavancas. Durante o processo, ele terá que fazer um *trade-off* entre exploração e experimentação, isto é, entre puxar a alavanca da máquina que tem se mostrado a melhor durante seus experimentos e experimentar novas máquinas que possivelmente seriam melhores. 
 
-De maneira mais geral, esse problema é definido em termos de \\(K\\) ações, cada uma com uma probabilidade de sucesso \\(\theta_k\\) desconhecida, mas constante no tempo, podendo assim ser descoberta com experimentação. Além disso, cada experimento está associado a um custo, geralmente um custo de oportunidade definido em função da não exploração exclusiva da ação ótima. Esse tipo de cenário pode surgir em teste de *layouts* de site, teste de novas drogas, teste de propagandas, escolha de investimentos e até em testes de modelos de aprendizagem de máquina. Se você está familiarizado com testes A/B, sabe que eles também são situações de bandidos Bernoulli. Note como nessas situações temos sempre mais do que uma opção para testar e incorremos num custo para cada teste realizado. Assim, nos interessa descobrir o mais rápido possível qual a opção que gera mais sucessos para que possamos explorá-la e descartar as outras. Há outras versões do problema, em que podemos ter várias ações ótimas, dependendo do contexto, mas vamos nos ficar no caso mais simples aqui. Para informações mais detalhadas, sugiro [este artigo da Wikipedia](https://en.wikipedia.org/wiki/Multi-armed_bandit).
+De maneira mais geral, esse problema é definido em termos de \\(K\\) ações, cada uma com uma probabilidade de sucesso \\(\theta_k\\) desconhecida, mas constante no tempo, podendo assim ser descoberta com experimentação. Além disso, cada experimento está associado a um custo, geralmente um custo de oportunidade definido em função da não exploração exclusiva da ação ótima. Esse tipo de cenário pode surgir em teste de *layouts* de site, teste de novas drogas, teste de propagandas, escolha de investimentos e até em testes de modelos de aprendizagem de máquina. Se você está familiarizado com testes A/B, sabe que eles também são situações de bandidos Bernoulli. Note como nessas situações temos sempre mais do que uma opção para testar e incorremos num custo para cada teste realizado. Assim, nos interessa descobrir o mais rápido possível qual a opção que gera mais sucessos para que possamos explorá-la e descartar as outras. Há outras versões do problema, em que podemos ter várias ações ótimas, dependendo do contexto, mas vamos ficar no caso mais simples aqui. Para informações mais detalhadas, sugiro [este artigo da Wikipedia](https://en.wikipedia.org/wiki/Multi-armed_bandit).
 
 <a name="randomSel"></a>
 ## Seleção Aleatória
 
-Uma forma bastante simples de solucionar o problema dos bandidos Bernoulli é simplesmente testar cada bandido \\(x\\) vezes e depois simplesmente escolher aquele que teve a maior taxa de sucesso durante o experimento. Vamos chamar isso de **política de seleção aleatória**. Como exemplo, considere a tarefa de escolher entre dois modelos de classificação que performaram igualmente bem nos dados de teste. 
+Uma forma bastante simples de solucionar o problema dos bandidos Bernoulli é testar cada bandido \\(x\\) vezes e depois simplesmente escolher aquele que teve a maior taxa de sucesso durante o experimento. Vamos chamar isso de **política de seleção aleatória**. Como exemplo, considere a tarefa de escolher entre dois modelos de classificação que performaram igualmente bem nos dados de teste. 
 
 Na política de seleção aleatória, mandamos ambos os modelos para produção e definimos um número de experimentos, digamos 20000 classificações. Durante este período de teste, selecionamos aleatoriamente um dos modelos para realizar cada classificação. Ao final do experimento, computamos a taxa de acerto de cada modelo e descartamos o que for pior. É bastante simples, então vamos à implementação!
 
@@ -47,7 +47,7 @@ class fakeModel(object):
             return 0 # simula um erro
 {% endhighlight %}
 
-Agora vamos implementar a política de seleção aleatória. Essa classe aceitará uma lista de modelos falsos e o número de experimentos. O método `.play()` realizará a quantidade de experimentos pré-definida, selecionando aleatoriamente um dos modelos e computando sua previsão. Nós também vamos armazenar os acertos de cada modelo em uma lista `num_1`. Ao final dos experimentos poderemos saber qual dos modelos mais acertou e qual foi a acurácia da nossa política de seleção aleatória **durante o experimento**.
+Agora vamos implementar a política de seleção aleatória. Essa classe aceitará uma lista de modelos falsos e o número de experimentos. O método `.play()` realizará a quantidade de experimentos pré-definida, selecionando aleatoriamente um dos modelos e computando sua previsão. Também vamos armazenar os acertos de cada modelo em uma lista `num_1`. Ao final dos experimentos poderemos saber qual dos modelos mais acertou e qual foi a acurácia da nossa política de seleção aleatória **durante o experimento**.
 
 {% highlight python %}
 class randomSelection(object):
@@ -73,10 +73,10 @@ class randomSelection(object):
 
             right += isRight # adiciona número de acertos
 
-        return 1.0 * right / self.nExper # retorna acurácia da política
+        return 1.0 * right / self.nExper # retorna a acurácia da política
 {% endhighlight %}
 
-Para testar essa política de seleção aleatória de modelos vamos criar dois modelos falsos muito parecidos. O primeiro terá uma acurácia de 0.6 e o segundo, de 0.62. Procedemos normalmente com a política, selecionando um modelo aleatoriamente durante o experimento. Ao final, podemos simplesmente ver qual modelo acertou mais e descartar o outro.
+Para testar essa política de seleção aleatória de modelos vamos criar dois modelos falsos muito parecidos. O primeiro terá uma acurácia de 0.6 e o segundo, de 0.62. Procedemos normalmente com a política, selecionando um modelo aleatoriamente durante cada teste do experimento. Ao final, podemos simplesmente ver qual modelo acertou mais e descartar o outro.
 
 Como estamos selecionando aleatoriamente os modelos durante o teste, podemos esperar que cada modelo seja escolhido para classificar as amostras 50% das vezes. Assim, a acurácia esperada do experimento é de \\((0.6 + 0.62) / 2 = 0.61\\). 
 É importante ressaltar que num teste real nós não saberíamos esses valores e nosso objetivo seria justamente descobrir essas taxas de acerto.
@@ -86,7 +86,7 @@ m1 = fakeModel(0.6)
 m2 = fakeModel(0.61)
 
 rs = randomSelection([m1, m2], 20000)
-print rs.play() # ~(.6 + .61) / 2 = 0.605
+print rs.play() # ~(.60 + .62) / 2 = 0.61
 print rs.selectedMod # mostra quanto cada modelo foi selecionado
 print rs.num_1
 {% endhighlight %}
@@ -98,14 +98,14 @@ print rs.num_1
 
 Como esperado, o primeiro modelo tem uma taxa de acerto menor, de \\(\frac{6092}{10114} = 0.6023\\), enquanto que o segundo modelo acerta um pouco mais \\(\frac{6094}{9886} = 0.616\\). Além disso, acurácia do experimento como um todo é próxima de 0.61 (0.6093).
 
-Com essa política de seleção aleatória conseguiríamos descobrir o melhor modelo, descartando aquele que não é ótimo. No entanto, isso vem a um custo, que é utilizar um modelo não ótimo para quase 10000 classificações. Isso pode não ser um problema se o custo de cada experimento for baixo, mas considere o caso de testar novas drogas para um câncer ou decidir qual ação comprar, onde cada classificação errada tem um custo altíssimo. Talvez a política de seleção aleatória não seja a melhor opção nesses casos. O ideal seria um algoritmo que, já durante o experimento, proativamente escolhesse a melhor ação com base nos seus retornos passados. 
+Com essa política de seleção aleatória conseguiríamos descobrir o melhor modelo, descartando aquele que não é ótimo. No entanto, isso vem a um custo, que é utilizar um modelo não ótimo para quase 10000 classificações. Isso pode não ser um problema se o custo de cada experimento for baixo, mas considere o caso de testar novas drogas para um câncer ou decidir qual ação comprar, onde cada classificação errada tem um custo altíssimo. Talvez a política de seleção aleatória não seja a melhor opção nesses casos. O ideal seria um algoritmo que, já durante o experimento, proativamente escolhesse a melhor ação com base nos seus erros e acertos passados. 
 
 <a name="ts"></a>
 ## *Thompson Sampling*
 
-*Thompson Sampling* é um algoritmo de aprendizagem por reforço amplamente utilizado na indústria para resolver problemas de bandidos Bernoulli. Ele é especialmente atrativo devido a sua simplicidade, além de ser extremamente eficiente. Em um nível intuitivo, o algoritmo primeiro assume que todas as ações tem mesma probabilidade de ser a melhor, selecionando assim aleatoriamente. Conforme os retornos das ações são observados, o algoritmo ou agente atualiza sua crença sobre qual ação é a melhor e passa a selecionar novas ações de acordo com essa nova crença. Conforme realizamos mais testes, o agente foca sua atenção nas melhores ações, diminuindo seu grau de incerteza sobre elas. Antes de prosseguir com os formalizamos matemáticos é interessante visualizar algumas iterações de *Thompson Sampling*. Para isso vamos usar uma animação retirada [deste blog](http://www.ryanhmckenna.com/2016/10/active-learning-and-thompson-sampling.html).
+*Thompson Sampling* é um algoritmo de aprendizagem por reforço amplamente utilizado na indústria para resolver problemas de bandidos Bernoulli. Ele é especialmente atrativo devido a sua simplicidade, além de ser extremamente eficiente. Em um nível intuitivo, o algoritmo primeiro assume que todas as ações tem mesma probabilidade de ser a melhor, selecionando assim aleatoriamente. Conforme os retornos das ações vão sendo observados, o algoritmo ou agente atualiza sua crença sobre qual ação é a melhor e passa a selecionar novas ações de acordo com essa nova crença. Assim, no decorrer dos testes, o agente foca sua atenção nas melhores ações, diminuindo seu grau de incerteza sobre elas. Antes de prosseguir com os formalizamos matemáticos é interessante visualizar algumas iterações de *Thompson Sampling*. Para isso vamos usar uma animação retirada [deste blog](http://www.ryanhmckenna.com/2016/10/active-learning-and-thompson-sampling.html).
 
-Considera que tenhamos 4 modelos, com acurácias desconhecidas 0.2, 0.4, 0.6 e 0.8. Nós então decidimos usar *Thompson Sampling* para descobrir qual é o melhor modelo. Em algum momento do teste, as distribuições estimadas para cada modelo serão representada pela imagem a seguir:
+Considera que tenhamos 4 modelos, com acurácias desconhecidas 0.2, 0.4, 0.6 e 0.8. Nós então decidimos usar *Thompson Sampling* para descobrir qual é o melhor. Em algum momento do teste, as distribuições estimadas para cada modelo serão representadas pela imagem a seguir:
 
 <img src="/img/tutorial/thompson/ts-step1.png" class="img-responsive center-block" alt="ts-iter-1" style="width: 50%;">
 
@@ -121,13 +121,13 @@ Agora, quando retiramos mais uma vez uma amostra de cada distribuição estimada
 
 <img src="/img/tutorial/thompson/ts-step4.png" class="img-responsive center-block" alt="ts-iter-4" style="width: 50%;">
 
-O que é importante perceber acima são os 3 passos de cada iteração. 1) retirar uma amostra de cada distribuição estimada, 2) escolher o modelo com a maior amostra e 3) ajustar as estimativas da distribuição do modelo escolhido com base no acerto ou erro desse modelo. Além disso, na prática, o que acontece é que ações piores são menos exploradas e, por conta disso, sua distribuição fica mais largas, refletindo maior incerteza sobre elas. Por outro lado, por serem constantemente escolhidas, ações melhores tendem a ter distribuição mais estreita em torno do seu retorno real, diminuindo a incerteza em trono delas. Intuitivamente, podemos dizer que *Thompson Sampling* não gasta tempo experimentando ações que não se mostram promissoras, focando mais em explorar a ação que parece ótima e experimentar apenas as que tem alguma chance de sê-lo. Segue a animação completa do aprendizado de *Thompson Sampling* do [blog de Michael Elkan](http://www.ryanhmckenna.com/2016/10/active-learning-and-thompson-sampling.html). Repare como as distribuições mais atualizadas são as dos melhores modelos.
+O que é importante perceber acima são os 3 passos de cada iteração. 1) retirar uma amostra de cada distribuição estimada, 2) escolher o modelo com a maior amostra e 3) ajustar as estimativas da distribuição do modelo escolhido com base no acerto ou erro desse modelo. Além disso, na prática, o que acontece é que ações piores são menos exploradas e, por conta disso, sua distribuição fica mais larga, refletindo maior incerteza sobre elas. Por outro lado, por serem constantemente escolhidas, ações melhores tendem a ter distribuição mais estreita em torno do seu retorno real, diminuindo a incerteza em trono delas. Intuitivamente, podemos dizer que *Thompson Sampling* não gasta tempo experimentando ações que não se mostram promissoras, focando mais em explorar a ação que parece ótima e experimentar apenas as que tem alguma chance de sê-lo. Segue a animação completa do aprendizado de *Thompson Sampling* do [blog de Michael Elkan](http://www.ryanhmckenna.com/2016/10/active-learning-and-thompson-sampling.html). Repare como as distribuições mais atualizadas são as dos melhores modelos.
 
 <figure class="figure center-block thumbnail" style="width: 60%;">
   <img src="/img/tutorial/thompson/ts-anim.gif" class="img-responsive center-block" alt="ts-animation">
 </figure>
 
-Mais formalmente, cada ação \\(k\\) está associada a um vetor de recompensas \\(\pmb{y}\\), que é dado por uma distribuição de probabilidade Bernoulli \\( p(\pmb{y} \| \theta_k) \sim \mathcal{B}(\theta_k)\\). \\(\theta_k\\) é desconhecido pelo agente e essa incerteza é iniciada assumindo uma distribuição uniforme \\(p(\theta_k) \sim \mathcal{U}[0,1]\\). Conforme o experimento desenrola, nós atualizamos a estimativa de \\(\theta_k\\) segundo a regra de Bayes:
+Mais formalmente, cada ação \\(k\\) está associada a um vetor de recompensas \\(\pmb{y}\\), que é dado por uma distribuição de probabilidade Bernoulli \\( p(\pmb{y} \| \theta_k) \sim \mathcal{B}(\theta_k)\\). \\(\theta_k\\) é desconhecido pelo agente e essa incerteza é iniciada assumindo uma distribuição uniforme \\(p(\theta_k) \sim \mathcal{U}[0,1]\\). Conforme o experimento se desenrola, atualizamos a estimativa de \\(\theta_k\\) segundo a regra de Bayes:
 
 $$p(\theta_k | \pmb{y}) = \frac{p(\pmb{y} | \theta_k)p(\theta_k)}{p(\pmb{y})}$$
 
@@ -139,12 +139,12 @@ E essa formula complexa pode ser simplificada para algo bem mais amigável como 
 
 $$P(\theta_k | \pmb{y}) = \beta(i+1, n-i+1)$$
 
-A distribuição beta faz sentido intuitivo, tendo seu pico em \\(\theta_k= \frac{i}{n}\\), que é simplesmente a contagem empírica de sucessos ao se escolher a ação \\(k\\), dividido pelo total de ações tomadas \\(n\\). O algoritmo procede então retirando uma amostra desta distribuição para cada escolha possível, escolhendo a ação com maior valor de beta e atualizando \\(i\\) conforme tal ação gera um erro ou um acerto. Podemos formalizar *Thompson Sampling* em três passos:
+A distribuição beta faz sentido intuitivo, tendo seu pico em \\(\theta_k= \frac{i}{n}\\), que é simplesmente a contagem empírica de sucessos ao se escolher a ação \\(k\\), dividido pelo total de ações tomadas \\(n\\). O algoritmo procede então retirando uma amostra desta distribuição para cada escolha possível, escolhendo a ação com maior valor de beta e atualizando \\(i\\) conforme tal ação gera um erro ou um acerto. Podemos formalizar *Thompson Sampling* em quatro passos:
 
 1. Para cada teste \\(n\\), considerar, para cada ação, o número de acertos (\\(i_1\\)) e erros (\\(i_0\\)) que ela teve até o teste \\(n\\).
-2. Para cada ação, retirar uma amostra que servirá de estimação para \\(\theta\\), \\(\hat{\theta_k} = \beta(i_1 + 1, i_0 + 1)\\).
+2. Para cada ação, retirar uma amostra que servirá de estimação para \\(\theta\\), \\(\hat{\theta_k} = \beta(i_{k1} + 1, i_{k0} + 1)\\).
 3. Selecionar a ação com maior \\(\hat{\theta}\\)
-4. Atualizar (\\(i_1\\)), se a ação for bem sucedida, ou (\\(i_0\\)), caso contrário.
+4. Atualizar (\\(i_{k1}\\)), se a ação for bem sucedida, ou (\\(i_{k0}\\)), caso contrário.
 
 
 OK, já basta de teoria. Vamos à implementação! A classe `thompsonSampling` tem os mesmos parâmetros de inicialização da política de seleção aleatória, isto é, uma lista de modelos falsos e o número de experimentos. Além disso, vamos manter a contagem de números de acertos e erros para cada modelo, assim como uma lista que armazena o número de vezes que cada modelo foi selecionado durante o teste. Aqui, em vez de selecionar aleatoriamente os modelos para classificação, vamos criar uma lista que tenha, para cada modelo, uma amostra da distribuição beta parametrizada com \\(\alpha\\) sendo o número de acertos do modelo mais 1 e \\(\beta\\) sendo o número de erros do modelo mais 1. Escolheremos para classificação o modelo com a maior dessas amostras beta. Por fim, a atualização da distribuição é feita incrementando as contagens de acertos e erros do modelo.
@@ -187,7 +187,7 @@ class thompsonSampling(object):
         return 1.0 * right / self.nExper
 {% endhighlight %}
 
-Para testar esse algoritmo vamos usar novamente os dois modelos falsos, com acurácias desconhecidas de 0.60 e 0.62. Então vamos utilizar *Thompson Sampling* para descobrir qual desses modelos é o melhor. 
+Para testar esse algoritmo vamos usar novamente os dois modelos falsos, com acurácias desconhecidas de 0.60 e 0.62. Então aplicamos *Thompson Sampling* para descobrir qual desses modelos é o melhor. 
 
 {% highlight python %}
 ts = thompsonSampling([m1, m2], 20000)
@@ -200,7 +200,7 @@ print ts.num_1
 [166, 19834]
 [84, 12358]
 ```
-Desta vez, o primeiro modelo tem uma taxa de acerto de \\(\frac{84}{166}=0.506\\), que é bem menor do que a sua acurácia real. O segundo modelo, por sua vez, tem uma taxa de acerto de \\(\frac{12358}{19834}=0.623\\), que é bem próxima da sua acurácia real. Além disso, note como o primeiro modelo foi selecionado apenas 166 vezes. Isso mostra que o algoritmo de *Thompson Sampling* descobriu rapidamente que ele não era ótimo e parou de experimentá-lo, focando mais em explorar o modelo ótimo. Note também que há um certo grau de erro estimativa da acurácia do primeiro modelo. Isso é esperado devido às poucas vezes que ele foi selecionado. Por fim, repare como a acurácia do experimento como um todo é bem próxima da acurácia do modelo ótimo. Isso mostra que, além de ser capaz de encontrar o melhor modelo, *Thompson Sampling* fez isso rápido o suficiente para que não precisássemos incorrer em custos desnecessário por escolher uma ação não ótima durante o experimento. 
+Desta vez, o primeiro modelo tem uma taxa de acerto de \\(\frac{84}{166}=0.506\\), que é bem menor do que a sua acurácia real. O segundo modelo, por sua vez, tem uma taxa de acerto de \\(\frac{12358}{19834}=0.623\\), que é bem próxima da sua acurácia real. Além disso, note como o primeiro modelo foi selecionado apenas 166 vezes. Isso mostra que o algoritmo de *Thompson Sampling* descobriu rapidamente que ele não era ótimo e parou de experimentá-lo, focando mais em explorar o modelo ótimo. Note também que há um certo grau de erro estimativa da acurácia do primeiro modelo. Isso é esperado devido às poucas vezes que ele foi selecionado. Por fim, repare como a acurácia do experimento como um todo é bem próxima da acurácia do modelo ótimo. Isso mostra que, além de ser capaz de encontrar o melhor modelo, *Thompson Sampling* fez isso rápido o suficiente para que não precisássemos incorrer em custos desnecessário por escolher uma ação não ótima durante o experimento. É importante destacar que *Thompson Samplsing* é um algoritmo estocástico, então os seus resultados provavelmente serão um pouco diferentes dos meus.
 
 
 <a name="ref"></a>
