@@ -10,6 +10,13 @@ author: "Matheus Facure"
 header-img: "img/dark-ann.jpg"
 ---
 
+<div class="row">
+<ul class="nav nav-tabs navbar-left">
+    <li class="active"><a href="#">Python</a></li>
+    <li><a href="/2017/03/04/bernoulli-bandits-thompson-scala/">Scala</a></li>
+</ul>
+</div>
+
 ## Conteúdo
 1. [Motivação](#motivacao) 
 2. [Seleção Aleatória](#randomSel)
