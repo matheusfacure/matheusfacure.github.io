@@ -19,7 +19,7 @@ header-img: "img/dark-ann.jpg"
 
 ## Pré-requisitos
 
-Esta é uma versão alternativa do tutorial em Python. Assim sendo, vou pressupor que você já está familiarizado com o tutorial padrão, o que tornará este muito mais rápido e direto. Além disso, esse tutorial será uma versão desafiadora que usa princípios de programação funcional, ou seja, não haverá redefinição de variáveis e estruturas de loops serão substituídas por recursão. Assim, é fundamental estar familiarizado com funções recursivas. Vou usar `sbt` para gerenciar pacotes no Scala. Caso não tenha familiaridade com essa ferramenta, sugiro que leia [este tutorial](https://github.com/shekhargulati/52-technologies-in-2016/blob/master/02-sbt/README.md) antes de prosseguir
+Esta é uma versão alternativa do tutorial em Python. Assim sendo, vou pressupor que você já está familiarizado com o tutorial padrão, o que tornará este muito mais rápido e direto. Além disso, este tutorial será uma versão desafiadora que usa princípios de programação funcional, ou seja, não haverá redefinição de variáveis e estruturas de loops serão substituídas por recursão. Assim, é fundamental estar familiarizado com funções recursivas. Vou usar `sbt` para gerenciar pacotes no Scala. Caso não tenha familiaridade com essa ferramenta, sugiro que leia [este tutorial](https://github.com/shekhargulati/52-technologies-in-2016/blob/master/02-sbt/README.md) antes de prosseguir
 
 ## *Thompson Sampling*
 
@@ -41,7 +41,7 @@ class fakeModel(accuracy: Double) {
 }
 {% endhighlight %}
 
-Para termos algo com o que comparar, vamos implementar uma classe `randomSelection` que realiza a política de seleção aleatória. No momento da criação, essa classe terá como parâmetros uma sequência de modelos falsos e o número de experiências para realizar. É no método `play` que acontece a seleção aleatória de fato. Dentro desse método vamos definir uma função recursiva que implementa as iterações do experimento. O caso base dessa função é quando o contador `i` excede o número de experimentos. Nesse caso a iteração termina, mostramos quanto cada modelo acertou, quantas vezes cada modelo foi escolhido e retornamos a acurácia **do experimento como um todo**. No caso recursivo da função, selecionamos um modelo aleatoriamente e simulamos uma classificação. Entramos então na invocação seguinte da função com a contagem de iterações incrementada (`i+1`), e atualizando a quantidade de acertos do experimento (` rights + isRight`), a quantidade de acertos do modelo selecionado (`ightCount.updated(chosenMod, rightCount(chosenMod) + isRight)`) e a quantidade de vezes que cada modelo foi selecionado (`numSelect.updated(chosenMod, numSelect(chosenMod) + 1)`).
+Para termos algo com o que comparar, vamos implementar uma classe `randomSelection` que realiza a política de seleção aleatória. No momento da criação, essa classe terá como parâmetros uma sequência de modelos falsos e o número de experiências para realizar. É no método `play` que acontece a seleção aleatória de fato. Dentro desse método vamos definir uma função recursiva que implementa as iterações do experimento. O caso base dessa função é quando o contador `i` excede o número de experimentos. Nesse caso a iteração termina, mostramos quanto cada modelo acertou, quantas vezes cada modelo foi escolhido e retornamos a acurácia **do experimento como um todo**. No caso recursivo da função, selecionamos um modelo aleatoriamente e simulamos uma classificação. Entramos então na invocação seguinte da função com a contagem de iterações incrementada (`i+1`) e atualizando a quantidade de acertos do experimento (` rights + isRight`), a quantidade de acertos do modelo selecionado (`ightCount.updated(chosenMod, rightCount(chosenMod) + isRight)`) e a quantidade de vezes que cada modelo foi selecionado (`numSelect.updated(chosenMod, numSelect(chosenMod) + 1)`).
 
 {% highlight scala %}
 class randomSelection(models: Seq[fakeModel], nExper: Int) {
@@ -91,7 +91,9 @@ class randomSelection(models: Seq[fakeModel], nExper: Int) {
         val num_rigths: Vector[Int] = Vector.fill(models.length)(0)
         val num_select: Vector[Int] = Vector.fill(models.length)(0)
 
-        100.0 * loop(0, 0, num_rigths, num_select) / nExper // retorna a acurácia nos experimentos
+        // retorna a acurácia nos experimentos
+
+        100.0 * loop(0, 0, num_rigths, num_select) / nExper 
 
     }
 }
@@ -99,7 +101,7 @@ class randomSelection(models: Seq[fakeModel], nExper: Int) {
 
 No método `play`, iniciamos as contagens de seleção e de acertos como vetores preenchidos com zeros. Também inicializamos os contadores `i` e a quantidade de acertos do experimentos ambas em zero. Por fim, retornamos a acurácia do experimento, isto é, o número de acertos, retornado pela função recursiva, dividido pela quantidade de experimentos. 
 
-A classe `thompsonSampling` será bastante similar. Uma diferença é que, além de vetores para armazenar a quantidade de acertos e de seleções, também precisaremos de um vetor para armazenar a quantidade de erros. Isso será utilizado no momento de retirar amostras betas para cada modelo: `Range(0, models.length).map(i => new Beta(rightCount(i)+1, wrongCount(i)+1).draw)`. Além disso, em vez de selecionar os modelos aleatoriamente, escolheremos aquele com maior amostra beta.
+A classe `thompsonSampling` será bastante similar. Uma diferença é que, além de vetores para armazenar a quantidade de acertos e de seleções, também precisaremos de um vetor para armazenar a quantidade de erros. Isso será utilizado no momento de retirar amostras betas para cada modelo. Além disso, em vez de selecionar os modelos aleatoriamente, escolheremos aquele com maior amostra beta.
 
 {% highlight scala %}
 lass thompsonSampling(models: Seq[fakeModel], nExper: Int) {
@@ -195,6 +197,6 @@ Escolhas por modelo: Vector(19490, 510)
 62.09
 ```
 
-Podemos ver como *Thompson Sampling* rapidamente para de experimentar o modelo não ótimo. Isso faz com que o experimento com esse algoritmo tenho, como um todo, uma acurácia bem próxima da do modelo ótimo, já que o explora quase exclusivamente. Por outro lado, na seleção aleatória iremos utilizar o modelo não ótimo para aproximadamente 50% das classificações, incorrendo num custo que poderia ser evitado com *Thompson Sampling*.
+Podemos ver como *Thompson Sampling* rapidamente para de experimentar o modelo não ótimo. Isso faz com que o experimento com esse algoritmo tenha, como um todo, uma acurácia bem próxima da do modelo ótimo, já que o explora quase exclusivamente. Por outro lado, na seleção aleatória iremos utilizar o modelo não ótimo para aproximadamente 50% das classificações, incorrendo num custo que poderia ser evitado com *Thompson Sampling*.
 
 ***
