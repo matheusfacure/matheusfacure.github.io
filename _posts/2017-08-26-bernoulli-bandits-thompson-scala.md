@@ -44,6 +44,9 @@ class fakeModel(accuracy: Double) {
 Para termos algo com o que comparar, vamos implementar uma classe `randomSelection` que realiza a política de seleção aleatória. No momento da criação, essa classe terá como parâmetros uma sequência de modelos falsos e o número de experiências para realizar. É no método `play` que acontece a seleção aleatória de fato. Dentro desse método vamos definir uma função recursiva que implementa as iterações do experimento. O caso base dessa função é quando o contador `i` excede o número de experimentos. Nesse caso a iteração termina, mostramos quanto cada modelo acertou, quantas vezes cada modelo foi escolhido e retornamos a acurácia **do experimento como um todo**. No caso recursivo da função, selecionamos um modelo aleatoriamente e simulamos uma classificação. Entramos então na invocação seguinte da função com a contagem de iterações incrementada (`i+1`) e atualizando a quantidade de acertos do experimento (` rights + isRight`), a quantidade de acertos do modelo selecionado (`ightCount.updated(chosenMod, rightCount(chosenMod) + isRight)`) e a quantidade de vezes que cada modelo foi selecionado (`numSelect.updated(chosenMod, numSelect(chosenMod) + 1)`).
 
 {% highlight scala %}
+import breeze.stats.distributions.Beta
+import util.Random
+
 class randomSelection(models: Seq[fakeModel], nExper: Int) {
     // Implementa uma política de escolha aleatória
 
