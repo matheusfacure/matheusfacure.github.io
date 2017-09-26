@@ -90,6 +90,6 @@ Nos próximos tutoriais, veremos algumas técnicas para mitigar o problema dos d
 ***
 
 <ul class="pager">
-  <li class="previous"><a href="https://matheusfacure.github.io/2017/06/22/gan-vanilla/">Anterior</a></li>
-  <li class="next"><a href="https://matheusfacure.github.io/2017/07/12/activ-func/">Próximo</a></li>
+  <li class="previous"><a href="/2017/06/22/gan-vanilla/">Anterior</a></li>
+  <li class="next"><a href="/2017/07/12/activ-func/">Próximo</a></li>
 </ul>
