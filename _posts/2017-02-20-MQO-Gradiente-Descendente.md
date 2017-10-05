@@ -264,7 +264,8 @@ regr.fit(dados['x'], dados['y'])
 
 Note como nem todos os passos nos levam em direção ao mínimo. Além disso, perceba como, no final do aprendizado, jamais chegamos ao mínimo, mas ficamos vagando em torno dele.</div>
 
-<h2 class="prompt input_prompt">Explorando melhorias: acelerando GDE</h2>
+
+<h2 id="Explorando-melhoras">Explorando melhorias: acelerando GDE</h2>
 <p>GDE por si só já é um método bastante popular para treinar modelos de Aprendizado de Máquina. Mesmo assim, várias extensões e variações foram propostas com o intuito de diminuir as flutuações na função custo ou acelerar o processo de treinamento. Aqui, vamos explorar apenas uma delas, mas saiba que muitas outras existem.</p>
 <p>Como já dissemos, a diferença fundamental entre o método de gradiente descendente e o processo de uma bolinha de gude descendo em uma cuia é que a bolinha acumula momento, acelerando conforme desce. Em outras palavras, quando a direção de descida é a mesma, a bolinha aumenta a velocidade. Isso é definitivamente uma propriedade que gostaríamos de ter no nosso processo de aprendizado por GDE: se estamos indo na direção certa, é uma boa ideia acelerar!</p>
 <p>Não se preocupe, é fácil modificar GDE para incorporar momento. Para isso, basta sabermos a velocidade passada da bolinha e atualizá-la conforme o processo de descida. Além disso, nós agora vamos atualizar os parâmetros conforme a velocidade, em vez de utilizar apenas o gradiente. Eis a nova regra de atualização dos parâmetros:</p>
