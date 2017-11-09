@@ -3,7 +3,7 @@ layout: post
 comments: true
 title: Monte-Carlo Dropout
 subtitle: "Incorporando  Meta-Conhecimento em Modelos de Deep Learning."
-date: 2017-07-06
+date: 2017-11-09
 tags: [Post]
 author: "Matheus Facure"
 header-img: /img/fundo_main.png
