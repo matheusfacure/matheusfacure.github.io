@@ -102,6 +102,6 @@ Para mais detalhes sobre regressão quantílica, sugiro [esta postagem](https://
 ***
 
 <ul class="pager">
-  <li class="previous"><a href="/2017/03/02/gp/">Anterior</a></li>
+  <li class="previous"><a href="/2017/03/01/l2-reg/">Anterior</a></li>
   <li class="next"><a href="/2017/03/04/bernoulli-bandits-thompson//">Próximo</a></li>
 </ul>
