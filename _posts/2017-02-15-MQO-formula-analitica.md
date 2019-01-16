@@ -274,6 +274,6 @@ Média do erro relativo: 0.122915533711
 
 <ul class="pager">
   <li class="previous"><a href="https://matheusfacure.github.io/2017/01/15/pre-req-ml/">Anterior</a></li>
-  <li class="next"><a href="https://matheusfacure.github.io/2017/02/20/MQO-Gradiente-Descendente/">Próximo</a></li>
+  <li class="next"><a href="/2017/02/16/ols-mechanics/">Próximo</a></li>
 </ul>
 
