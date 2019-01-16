@@ -530,3 +530,11 @@ array([[ 0.10815617],
 ## Referências
 Este tutorial é baseado no capítulo 3, *The Algebra of Least Squares*, do livro [Econometrics](https://www.ssc.wisc.edu/~bhansen/econometrics/), de Bruce E. Hansen. Além disso, tirei uma coisa ou outra na da parte de intuição *ceteris paribus* do livro [Introductory Econometrics: A Modern Approach](https://www.amazon.com/Introductory-Econometrics-Modern-Approach-Economics/dp/1111531048/ref=sr_1_2?s=books&ie=UTF8&qid=1547503795&sr=1-2&refinements=p_lbr_one_browse-bin%3AJeffrey+M.+Wooldridge), de Jeffrey Wooldridge. Por fim, como sempre, todo o código desenvolvido aqui está no [meu GitHub](https://github.com/matheusfacure/Tutoriais-de-AM/blob/master/MQO%20Ceteris%20Paribus.ipynb). Nesse link, coloquei também código referente a parte de Fundamentos Matemáticos, que pode te ajudar a entender melhor a matemática que desenvolvemos.
 
+<hr>
+
+<ul class="pager">
+  <li class="previous"><a href="/2017/02/15/MQO-formula-analitica/">Anterior</a></li>
+  <li class="next"><a href="/2017/02/20/MQO-Gradiente-Descendente/">Próximo</a></li>
+</ul>
+
+
