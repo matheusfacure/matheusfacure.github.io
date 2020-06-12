@@ -1,6 +1,6 @@
 ---
 layout: tutorial
-tags: [Tutorial-Advc]
+tags: [Tutorial]
 comments: true
 title: Estimadores Duplamente Robustos
 subtitle: "Usando Aprendizado de Máquina para Inferência Causal em Dados Observacionais"
