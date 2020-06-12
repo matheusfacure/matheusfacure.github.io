@@ -1,0 +1,23 @@
+---
+layout: page
+title: "Causal Inference Tutorials"
+---
+
+
+{% for post in site.posts reversed %}
+    {% if post.tags contains 'Econ' %}
+        <hr>
+        <div class="post-preview" style="margin-top: 2%;">
+            <a href="{{ post.url | prepend: site.baseurl }}">
+                <h2 class="post-title">            
+                    {{ post.title }}
+                </h2>
+                {% if post.subtitle %}
+                <h3 class="post-subtitle" style="font-weight: 300; font-size:20px; font-family: Helvetica;">
+                    {{ post.subtitle }}
+                </h3>
+                {% endif %}
+            </a>
+        </div>
+    {% endif %}
+{% endfor %}
