@@ -7,7 +7,6 @@ subtitle: "Um belo equilíbrio de Nash."
 date: 2017-06-22
 true-dt: 2017-06-22
 author: "Matheus Facure"
-header-img: "img/dark-ann.jpg"
 ---
 
 ## Introdução

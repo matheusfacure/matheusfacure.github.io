@@ -8,7 +8,6 @@ true-dt: 2017-02-15
 update: 2017-07-19
 tags: [Tutorial]
 author: "Matheus Facure"
-header-img: "img/dark-ann.jpg"
 ---
 
 <div class="row">

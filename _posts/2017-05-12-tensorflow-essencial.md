@@ -7,7 +7,6 @@ date: 2017-05-12
 true-dt: 2017-05-12
 tags: [Tutorial]
 author: "Matheus Facure"
-header-img: "img/dark-ann.jpg"
 ---
 
 O [TensorFlow](https://www.tensorflow.org/) é uma biblioteca de computação numérica desenvolvida pelo Goolge e feita *open source* em 2015, tornando-se rapidamente a mais famosa e recomendada para *Deep Learning*. No início de 2017, o TensorFlow saiu da sua versão beta (de testes) e ganhou suporte para o Windows. Dentre as companhias que usam o TensorFlow estão Airbnb, Airbus, Dropbox, ebay, IBM, Intel, Snapchat, Twitter e Uber. Algumas das vantagens que fazem o TensorFlow se destacar das outras bibliotecas de redes neurais são;

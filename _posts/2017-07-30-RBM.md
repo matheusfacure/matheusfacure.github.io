@@ -7,7 +7,6 @@ subtitle: "Um modelo gerador gráfico, não supervisionado, probabilístico e ba
 date: 2017-07-30
 true-dt: 2017-07-30
 author: "Matheus Facure"
-header-img: "img/dark-ann.jpg"
 ---
 
 <div class="row">

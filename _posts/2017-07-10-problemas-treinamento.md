@@ -7,7 +7,6 @@ subtitle: "Examinando o problema de gradientes explodindo ou desvanecendo."
 date: 2017-07-10
 true-dt: 2017-07-10
 author: "Matheus Facure"
-header-img: "img/dark-ann.jpg"
 ---
 
 ## Pré-requisitos

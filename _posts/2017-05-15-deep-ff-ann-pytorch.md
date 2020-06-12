@@ -7,7 +7,6 @@ subtitle: "Implemente modelos básicos de Deep Learning usando PyTorch."
 date: 2017-05-15
 true-dt: 2017-07-23
 author: "Matheus Facure"
-header-img: "img/dark-ann.jpg"
 ---
 
 <div class="row">

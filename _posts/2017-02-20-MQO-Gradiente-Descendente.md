@@ -7,7 +7,6 @@ date: 2017-02-20
 true-dt: 2017-02-20
 tags: [Tutorial]
 author: "Matheus Facure"
-header-img: "img/dark-ann.jpg"
 ---
 
 <p>Métodos iterativos de otimização são usados toda a parte de Aprendizado de Máquina. Aqui, nós vamos olhar o método de gradiente descendente. Em se tratando de uma simples regressão linear, o método de gradiente descendente só é recomendado quando temos dados com muitas dimensões. Nesse caso, a inversão da matriz \(  \pmb{X}^T\pmb{X} \) começa a demorar muito e resolver regressão linear pela fórmula analítica \(  \pmb{\hat{w}} = (\pmb{X}^T \pmb{X})^{-1} \pmb{X}^T \pmb{y} \) não vale mais a pena.</p>

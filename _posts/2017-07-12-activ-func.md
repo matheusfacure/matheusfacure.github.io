@@ -7,7 +7,6 @@ subtitle: "Entendendo a importância da ativação correta nas redes neurais."
 date: 2017-07-12
 true-dt: 2017-07-12
 author: "Matheus Facure"
-header-img: "img/dark-ann.jpg"
 ---
 
 Redes neurais artificiais tiveram seu advento na década de 40 mas, até pouco tempo atrás, elas eram extremamente difíceis de treinar. Esse fenômeno já era estudado desde os anos 90, mas só em 2010, com um [paper de Xavier Glorot e Yoshua Bengio](http://proceedings.mlr.press/v9/glorot10a/glorot10a.pdf), é que começamos a entendemosder essa dificuldade a fundo. No [tutorial passado](https://matheusfacure.github.io/2017/07/10/problemas-treinamento/), vimos de como surge essa dificuldade; neste tutorial vemos uma forma de mitigá-la, acelerando o treinamento de redes neurais artificiais com funções de ativação mais inteligentes. 

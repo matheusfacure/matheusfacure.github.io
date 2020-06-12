@@ -7,7 +7,6 @@ date: 2017-03-03
 true-dt: 2017-05-25
 tags: [Tutorial]
 author: "Matheus Facure"
-header-img: "img/dark-ann.jpg"
 ---
 
 ## Pré-requisitos

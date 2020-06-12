@@ -7,7 +7,6 @@ subtitle: "Um algoritmo de aprendizagem por reforço para testes eficientes"
 date: 2017-03-04
 true-dt: 2017-08-26
 author: "Matheus Facure"
-header-img: "img/dark-ann.jpg"
 ---
 
 <div class="row">

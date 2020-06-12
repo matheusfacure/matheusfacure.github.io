@@ -7,7 +7,6 @@ subtitle: "Um aprofundamento teórico sobre a estimação da Regressão Linear"
 date: 2017-02-16
 true-dt: 2019-01-15
 author: "Matheus Facure"
-header-img: "img/dark-ann.jpg"
 ---
 
 ## Conteúdo
