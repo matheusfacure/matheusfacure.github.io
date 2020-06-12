@@ -214,11 +214,3 @@ Desta vez, o primeiro modelo tem uma taxa de acerto de \\(\frac{84}{166}=0.506\\
 ## Referências
 
 A principal referência para esta postagem é o artigo de Russo et al, [*A Tutorial on Thompson Sampling*](https://arxiv.org/abs/1707.02038), publicado mês passado. Também utilizei bastante conteúdo do [post de Michael Elkan](http://www.ryanhmckenna.com/2016/10/active-learning-and-thompson-sampling.html). Por fim, o código é adaptado do curso de [*Machine Learning A-Z*](https://www.superdatascience.com/machine-learning/).
-
-
-***
-
-<ul class="pager">
-  <li class="previous"><a href="/2017/03/03/func-custo-regr/">Anterior</a></li>
-  <li class="next"><a href="/2017/03/05/ann-intro/">Próximo</a></li>
-</ul>

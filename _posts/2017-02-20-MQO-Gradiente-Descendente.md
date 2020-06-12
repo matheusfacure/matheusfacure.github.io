@@ -388,11 +388,3 @@ Uma grande vantagem dessas bibliotecas é que elas são otimizadas para realizar
 	<li>Os vídeos <a href="https://www.youtube.com/watch?v=LN0PLnDpGN4&index=5&t=598s&list=PLnnr1O8OWc6ajN_fNcSUz9k5gF_E9huF0">1</a>, <a href="https://www.youtube.com/watch?v=kWq2k1gPyBs&index=6&list=PLnnr1O8OWc6ajN_fNcSUz9k5gF_E9huF0">2</a> e <a href="https://www.youtube.com/watch?v=7LqYTTwuu0k&list=PLnnr1O8OWc6ajN_fNcSUz9k5gF_E9huF0&index=7">3</a> sobre gradiente descendente com regressão linear de uma variável (do curso de Machine Learning com o professor Ng) cobrem a maioria do conteúdo que vimos aqui com bastante visualização e de maneira intuitiva. Além disso, o vídeo <a href="https://www.youtube.com/watch?v=UfNU3Vhv5CA&t=627s">4</a> do mesmo curso mostra bem a intuição de GDE</li>
 	<li>Os vídeos <a href="https://www.youtube.com/watch?v=hMLUgM6kTp8&index=20&list=PLAwxTw4SYaPn_OWPFT9ulXLuQrImzHfOV">1</a> e <a href="https://www.youtube.com/watch?v=s6jC7Wc9iMI&index=21&list=PLAwxTw4SYaPn_OWPFT9ulXLuQrImzHfOV">2</a> do custo de Deep Learning do Google resumem bem GDE, dão dicas de como acelerar o aprendizado e ainda falam sobre a extensão do algoritmo com momento - embora um pouco diferente da nossa.</li>
 </ul>
-
-***
-
-<ul class="pager">
-  <li class="previous"><a href="https://matheusfacure.github.io/2017/02/15/MQO-formula-analitica/">Anterior</a></li>
-  <li class="next"><a href="https://matheusfacure.github.io/2017/02/25/regr-log/">Próximo</a></li>
-</ul>
-

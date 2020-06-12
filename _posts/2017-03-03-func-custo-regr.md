@@ -97,11 +97,3 @@ Por fim, podemos ver as diferentes estimativas obtidas tanto com a minimização
 <img class="img-responsive center-block thumbnail" src="/img/tutorial/quantile-regression.png" alt="quantile-regr" style="width:80%">
 
 Para mais detalhes sobre regressão quantílica, sugiro [esta postagem](https://mathematicaforprediction.wordpress.com/2013/12/23/quantile-regression-robustness/).
-
-
-***
-
-<ul class="pager">
-  <li class="previous"><a href="/2017/03/01/l2-reg/">Anterior</a></li>
-  <li class="next"><a href="/2017/03/04/bernoulli-bandits-thompson//">Próximo</a></li>
-</ul>

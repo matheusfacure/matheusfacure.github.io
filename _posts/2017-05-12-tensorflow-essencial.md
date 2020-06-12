@@ -323,11 +323,3 @@ Uma outra opção para tutoriais é procurar vídeos no YouTube. Quanto a isso, 
 2) [TensorFlow, por 周莫烦](https://www.youtube.com/playlist?list=PLXO45tsB95cJHXaDKpbwr5fC_CCYylw1f)
 
 Eu também coloquei esse tutorial em um [notebook Jupyter no GitHub](https://github.com/matheusfacure/Tutoriais-de-AM/blob/master/Redes%20Neurais%20Artificiais/Tutorial%20de%20TensorFlow.ipynb). Eu recomendo que você baixe o código e execute as células, colocando `print()` nos lugares que não entender. No final, também coloquei um exercício para fixar o que expliquei aqui. A tarefa é adaptar o código para implementar regressão logística. Dica: será preciso mudar a função custo e adicionar uma camada logística. 
-
-***
-
-<ul class="pager">
-  <li class="previous"><a href="https://matheusfacure.github.io/2017/03/10/backprop/">Anterior</a></li>
-  <li class="next"><a href="https://matheusfacure.github.io/2017/05/15/deep-ff-ann/">Próximo</a></li>
-</ul>
-

@@ -156,10 +156,3 @@ Acima, vemos que a função ReLU é apenas marginalmente pior do que a sua vers�
 ## Referências
 
 Mais uma vez a referência principal do conteúdo aqui desenvolvido é o [livro Deep Learning, por Goodfellow et al, 2016](http://www.deeplearningbook.org/), especificamente, o capítulo 6 seção 6.3 sobre Unidades Ocultas. Também retirei bastante informação, principalmente considerações práticas, do livro [*Hands-On Machine Learning with Scikit-Learn and TensorFlow*, de Aurélien Géron, 2017](http://shop.oreilly.com/product/0636920052289.do). Por fim, vale a pena destacar o artigo [*Understanding the difficulty of training deep feedforward neural networks*, por Glorot e Bengio, 2010](http://proceedings.mlr.press/v9/glorot10a/glorot10a.pdf). Esse artigo representa um dos maiores avanços que tivemos nos últimos anos em entender e combater as dificuldades de treinar redes neurais artificiais. O código completo deste post pode ser encontrado no [meu GitHub](https://github.com/matheusfacure/Tutoriais-de-AM/blob/master/Redes%20Neurais%20Artificiais/activations_ann.py).
-
-***
-
-<ul class="pager">
-  <li class="previous"><a href="/2017/07/10/problemas-treinamento/">Anterior</a></li>
-  <li class="next"><a href="/2017/09/12/rnn/">Próximo</a></li>
-</ul>

@@ -86,10 +86,3 @@ Após algumas iterações de treino, a distribuição dos derivadas da primeira 
 <img class="img-responsive center-block thumbnail" src="/img/tutorial/grad_hist_end.png" alt="hist2"/>
 
 Nos próximos tutoriais, veremos algumas técnicas para mitigar o problema dos derivadas explodindo ou desvanecendo. Pelas mudanças que fizemos na rede neural aqui descrita relativamente as que havíamos implementado nos tutoriais passados, você já deve ter adivinhado sobre o que tratarão essas técnicas. Adiantando um pouco, dois métodos para lidar com a instabilidade dos derivadas envolvem mudanças na função de ativação (não linearidade) das camadas ocultas e mudanças na inicialização dos parâmetros. 
-
-***
-
-<ul class="pager">
-  <li class="previous"><a href="/2017/06/22/gan-vanilla/">Anterior</a></li>
-  <li class="next"><a href="/2017/07/12/activ-func/">Próximo</a></li>
-</ul>

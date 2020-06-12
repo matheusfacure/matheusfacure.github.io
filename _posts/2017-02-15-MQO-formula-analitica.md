@@ -271,9 +271,3 @@ Média do erro relativo: 0.122915533711
 <p>Vale uma nota de atenção: aqui só podemos abordar regressão linear brevemente. Ainda há problemas de inferência (saber se os coeficientes são estatisticamente significantes), de interpretação em outras escalas, de hipóteses assumidas e do que fazer quando tais hipóteses são violadas. Tenha isso em mente na hora de usá-lo! Muita coisa ficou incompleta aqui.</p>
 
 <hr>
-
-<ul class="pager">
-  <li class="previous"><a href="https://matheusfacure.github.io/2017/01/15/pre-req-ml/">Anterior</a></li>
-  <li class="next"><a href="/2017/02/16/ols-mechanics/">Próximo</a></li>
-</ul>
-

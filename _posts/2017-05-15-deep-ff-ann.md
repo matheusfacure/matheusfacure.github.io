@@ -327,10 +327,3 @@ Como recurso adicional, recomendo estar playlists de vídeos:
 3) [Practical Machine Learning Tutorial with Python](https://pythonprogramming.net/neural-networks-machine-learning-tutorial/)  
 
 Como sempre, eu coloquei o [código desse tutorial no GitHub](https://github.com/matheusfacure/Tutoriais-de-AM/blob/master/Redes%20Neurais%20Artificiais/DeepANN.ipynb).
-
-***
-
-<ul class="pager">
-  <li class="previous"><a href="https://matheusfacure.github.io/2017/05/12/tensorflow-essencial/">Anterior</a></li>
-  <li class="next"><a href="https://matheusfacure.github.io/2017/06/10/tf-detalhes/">Próximo</a></li>
-</ul>
