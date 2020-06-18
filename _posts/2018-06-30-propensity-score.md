@@ -1,13 +1,12 @@
 ---
 layout: tutorial
-tags: [Tutorial-Advc]
+tags: [Tutorial]
 comments: true
 title: Estimadores Duplamente Robustos
 subtitle: "Usando Aprendizado de Máquina para Inferência Causal em Dados Observacionais"
 date: 2018-06-29
 true-dt: 2018-06-29
 author: "Matheus Facure"
-header-img: "img/dark-ann.jpg"
 ---
 
 ## Aviso

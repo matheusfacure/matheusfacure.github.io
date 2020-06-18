@@ -6,7 +6,6 @@ subtitle: "Porque é uma boa ideia usar Deep PNL para análise de sentimentos"
 date: 2017-05-26
 tags: [Post]
 author: "Matheus Facure"
-header-img: "/img/dark-nlp.jpg"
 modal-id: 9
 thumbnail: /img/portfolio/deep-nlp/thumbnail.jpg
 description: Análise de sentimento é um termo geral para se referir à tarefa de perceber emoções a partir de dados gerados por pessoas. Dentre esses dados, os mais comuns estão na forma de texto. A partir de comentários nas mídias sociais, podemos ver como as pessoas reagem a uma postagem ou notícia, como estão avaliando um restaurante ou se aprovam ou não um político. Neste post, faço um breve resumo sobre as formas de realizar análise de sentimentos. Em seguida, mostro como Deep Learning (particularmente, redes neurais recorrentes) pode ajudar nessa tarefa.

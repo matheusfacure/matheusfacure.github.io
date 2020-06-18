@@ -7,7 +7,6 @@ date: 2017-05-12
 true-dt: 2017-05-12
 tags: [Tutorial]
 author: "Matheus Facure"
-header-img: "img/dark-ann.jpg"
 ---
 
 O [TensorFlow](https://www.tensorflow.org/) é uma biblioteca de computação numérica desenvolvida pelo Goolge e feita *open source* em 2015, tornando-se rapidamente a mais famosa e recomendada para *Deep Learning*. No início de 2017, o TensorFlow saiu da sua versão beta (de testes) e ganhou suporte para o Windows. Dentre as companhias que usam o TensorFlow estão Airbnb, Airbus, Dropbox, ebay, IBM, Intel, Snapchat, Twitter e Uber. Algumas das vantagens que fazem o TensorFlow se destacar das outras bibliotecas de redes neurais são;
@@ -323,11 +322,3 @@ Uma outra opção para tutoriais é procurar vídeos no YouTube. Quanto a isso, 
 2) [TensorFlow, por 周莫烦](https://www.youtube.com/playlist?list=PLXO45tsB95cJHXaDKpbwr5fC_CCYylw1f)
 
 Eu também coloquei esse tutorial em um [notebook Jupyter no GitHub](https://github.com/matheusfacure/Tutoriais-de-AM/blob/master/Redes%20Neurais%20Artificiais/Tutorial%20de%20TensorFlow.ipynb). Eu recomendo que você baixe o código e execute as células, colocando `print()` nos lugares que não entender. No final, também coloquei um exercício para fixar o que expliquei aqui. A tarefa é adaptar o código para implementar regressão logística. Dica: será preciso mudar a função custo e adicionar uma camada logística. 
-
-***
-
-<ul class="pager">
-  <li class="previous"><a href="https://matheusfacure.github.io/2017/03/10/backprop/">Anterior</a></li>
-  <li class="next"><a href="https://matheusfacure.github.io/2017/05/15/deep-ff-ann/">Próximo</a></li>
-</ul>
-

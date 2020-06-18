@@ -7,7 +7,6 @@ subtitle: "Um belo equilíbrio de Nash."
 date: 2017-06-22
 true-dt: 2017-06-22
 author: "Matheus Facure"
-header-img: "img/dark-ann.jpg"
 ---
 
 ## Introdução
@@ -281,10 +280,3 @@ Aparentemente, nosso treinamento colapsou pois a rede descriminadora ficou muito
 # Referências
 
 A maioria desse tutorial foi retirada do [último capítulo do livro Deep Learning, por Goodfellow et al, 2016](http://www.deeplearningbook.org/contents/generative_models.html). Caso queira saber mais sobre RAGs, sugiro [esta palestra do NIPS 2016](https://www.youtube.com/watch?v=AJVyzd0rqdc), também por Ian Goodfellow.  [O notebook com toda a implementação da RAG aqui desenvolvida pode ser encontrado no meu GitHub](https://github.com/matheusfacure/Tutoriais-de-AM/blob/master/Redes%20Neurais%20Artificiais/GAN_MNIST.ipynb).
-
-***
-<ul class="pager">
-  <li class="previous"><a href="https://matheusfacure.github.io/2017/05/12/tensorflow-essencial/">Anterior
-  <li class="next"><a href="https://matheusfacure.github.io/2017/07/10/problemas-treinamento/">Próximo</a></li>
-  </a></li>
-</ul>

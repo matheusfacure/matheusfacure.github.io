@@ -7,7 +7,6 @@ subtitle: "Entendendo como melhor organizar um código TensorFlow."
 date: 2017-06-10
 true-dt: 2017-06-15
 author: "Matheus Facure"
-header-img: "img/dark-ann.jpg"
 ---
 
 ## Pré-requisitos
@@ -393,11 +392,3 @@ Por fim, vamos para a aba `SCALARS`. Nela, podemos ver como o custo e a acuráci
 ## Referências <a name="ref"></a>
 
 Este tutorial foi inspirado no livro [Hands-On Machine Learning with Scikit-Learn and TensorFlow](https://www.amazon.com/Hands-Machine-Learning-Scikit-Learn-TensorFlow/dp/1491962291), nesta [séries de vídeos](https://www.youtube.com/playlist?list=PLXO45tsB95cJHXaDKpbwr5fC_CCYylw1f) e nessa [sessão ao vivo](https://www.youtube.com/watch?v=fBVEXKp4DIc) explicando como usar o TensorBoard. Além disso, fiz o *upload* do [notebook usado nesse tutorial para o meu GitHub](https://github.com/matheusfacure/Tutoriais-de-AM/blob/master/Redes%20Neurais%20Artificiais/TensorFlow%20Detalhado.ipynb). 
-
-***
-<ul class="pager">
-  <li class="previous"><a href="https://matheusfacure.github.io/2017/05/15/deep-ff-ann/">Anterior
-  <li class="next"><a href="https://matheusfacure.github.io/2017/06/22/gan-vanilla/">Próximo</a></li>
-  </a></li>
-</ul>
-
