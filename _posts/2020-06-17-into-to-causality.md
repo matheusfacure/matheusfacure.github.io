@@ -2,7 +2,7 @@
 layout: tutorial
 tags: [Econ]
 comments: true
-title: Introduction To Causality
+title: 1 - Introduction To Causality
 subtitle: Why causality matters; potential outcome notation; understanding bias.
 date: 2020-06-17
 true-dt: 2020-06-17
