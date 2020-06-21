@@ -313,5 +313,7 @@ My final reference is Miguel Hernan and Jamie Robins' book. It has been my trust
 
 The data used here is from a study of Alpert, William T., Kenneth A. Couch, and Oskar R. Harmon. 2016. ["A Randomized Assessment of Online Learning"](https://www.aeaweb.org/articles?id=10.1257/aer.p20161057). American Economic Review, 106 (5): 378-82.
 
+The code for this and other tutorials about causality can by found at my [GitHub page](https://github.com/matheusfacure/python-causality-handbook). If you like it, don't forget to leave me a star! 
+
 ![img](/img/econ/poetry.png)
 
