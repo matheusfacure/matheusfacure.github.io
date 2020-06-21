@@ -3,7 +3,7 @@ layout: tutorial
 tags: [MBA]
 comments: true
 title: Made To Stick
-subtitle: Understanding what make ideas memorable
+subtitle: Understanding what makes ideas memorable
 date: 2020-06-18
 true-dt: 2020-06-18
 author: "Matheus Facure"
