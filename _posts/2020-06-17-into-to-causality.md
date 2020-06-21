@@ -339,5 +339,6 @@ The beer analogy was taken from the awesome [Stock Series](https://jlcollinsnh.c
 
 The code for this and other tutorials about causality can by found at my [GitHub page](https://github.com/matheusfacure/python-causality-handbook). If you like it, don't forget to leave me a star! 
 
+![img](/img/econ/poetry.png)
 
 

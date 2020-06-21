@@ -4,8 +4,8 @@ tags: [Econ]
 comments: true
 title: 3 - Stats Review - The Most Dangerous Equation
 subtitle: Coming Soon
-date: 2020-06-18
-true-dt: 2020-06-18
+date: 2020-06-22
+true-dt: 2020-06-22
 author: "Matheus Facure"
 ---
 
