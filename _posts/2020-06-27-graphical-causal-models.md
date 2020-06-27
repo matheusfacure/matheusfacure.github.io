@@ -4,8 +4,8 @@ tags: [Econ]
 comments: true
 title: 4 - Graphical Causal Models
 subtitle: Coming Soon
-date: 2020-06-25
-true-dt: 2020-06-25
+date: 2020-06-27
+true-dt: 2020-06-27
 author: "Matheus Facure"
 ---
 
