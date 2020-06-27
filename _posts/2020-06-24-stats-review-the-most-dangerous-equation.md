@@ -565,5 +565,7 @@ In this particular section, I've also referenced The [Most Dangerous Equation](h
 
 Finally, if you are curious about the correct interpretation of the statistical concepts we've discussed here, I recommend reading the paper by Greenland et al, 2016: [Statistical tests, P values, confidence intervals, and power: a guide to misinterpretations](https://link.springer.com/content/pdf/10.1007/s10654-016-0149-3.pdf).
 
+The code for this and other tutorials about causality can by found at my [GitHub page](https://github.com/matheusfacure/python-causality-handbook). If you like it, don't forget to leave me a star! 
+
 ![img](/img/econ/poetry.png)
 
