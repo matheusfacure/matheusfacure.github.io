@@ -55,8 +55,7 @@ $$
 Now, let's consider a fork structure in the graph. In this case, the same variable causes two other variables down the graph. In this case, the dependence flows backward through the arrows and we have what it is called a **backdoor path**. We can close the backdoor path and shut down dependence by conditioning on the common cause.
 
 
-![svg](/img/econ/graphs/output_6_0.svg)
-
+<img class="img-responsive center-block" src="/img/econ/graphs/output_6_0.svg" style="width: 100%;" alt=""/>
 
 As an example, let's say your knowledge of statistics causes you to know more of causal inference and machine learning. If I don't know your level of statistical knowledge, then knowing that you are good at causal inference makes it more likely that you are also good at machine learning. That is because even if I don't know your level of statistical knowledge, I can infer it from your causal inference knowledge: if you are good at causal inference you are probably good at statistics, which also makes it more likely that you are good at machine learning. 
 
@@ -74,8 +73,7 @@ $$
 
 The only structure that is missing is the collider. A collider is when two arrows collide on a single variable. We can say that in this case both variables share a common effect. 
 
-
-![svg](/img/econ/graphs/output_8_0.svg)
+<img class="img-responsive center-block" src="/img/econ/graphs/output_8_0.svg" style="width: 100%;" alt=""/>
 
 
 As an example, consider that there are two ways to get a job promotion. You can either be good at statistics or flatter your boss. If I don't condition on your job promotion, that is, I know nothing if you will or won't get it, then your level of statistics and flattering are independent. In other words, knowing how good you are at statistics tells me nothing about how good you are at flattering your boss. On the other hand, if you did get a job promotion, suddenly, knowing your level of statistics tells me about your level of flattering. If you are bad at statistics and you did get a promotion, it becomes more likely that you know how to flatter, otherwise you wouldn't get a promotion. Conversely, if you are bad at flattering, it must be the case that you are good at statistics. This phenomenon is sometimes called **explaining away**, because one cause already explains the effect, making the other cause less likely.
@@ -96,7 +94,7 @@ Knowing the three structures, we can derive an even more general rule. A path is
 
 Here is a cheat sheet about how dependence flows in a graph. I've taken from a [Stanford presentation](http://ai.stanford.edu/~paskin/gm-short-course/lec2.pdf) by Mark Paskin.
 
-![img](/img/econ/graphs/graph-flow.png)
+<img class="img-responsive center-block" src="/img/econ/graphs/graph-flow.png" style="width: 75%;" alt=""/>
 
 As a final example, try to figure out some independence and dependence relationship in the following causal graph.
 1. Is \\(D \perp C\\)?
@@ -175,9 +173,7 @@ To use a purely graphical argument, if someone invests, knowing that they have h
 
 Just as a side note, all of this we've discussed is also true if we condition on any descendent of a common effect.
 
-
-![svg](/img/econ/graphs/output_20_0.svg)
-
+<img class="img-responsive center-block" src="/img/econ/graphs/output_20_0.svg" style="width: 15%;" alt=""/>
 
 A similar thing happens when we condition on a mediator of the treatment. A mediator is a variable between the treatment and the outcome. It, well, mediates the causal effect. For example, suppose again you are able to randomize education. But, just to be sure, you decide to control whether or not the person had a white collar job. Once again, this conditioning biasses the causal effect estimation. This time, not because it opens a front door path with a collider, but because it closes one of the channels through which the treatment operates. In our example, getting a white collar job is one way that more education leads to higher pay. By controlling it, we close this channel and leave open only the direct effect of education on wage.
 
@@ -207,5 +203,7 @@ I'll also like to reference the amazing books from Angrist. They have shown me t
 My final reference is Miguel Hernan and Jamie Robins' book. It has been my trustworthy companion in the most thorny causal questions I had to answer.
 
 * [Causal Inference Book](https://www.hsph.harvard.edu/miguel-hernan/causal-inference-book/)
+
+The code for this and other tutorials about causality can by found at my [GitHub page](https://github.com/matheusfacure/python-causality-handbook). If you like it, don't forget to leave me a star! 
 
 ![img](/img/econ/poetry.png)
