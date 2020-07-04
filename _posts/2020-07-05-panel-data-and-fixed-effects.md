@@ -4,8 +4,8 @@ tags: [Econ]
 comments: true
 title: 13 - Panel Data and Fixed Effects
 subtitle: Coming Soon
-date: 2020-06-28
-true-dt: 2020-06-28
+date: 2020-07-05
+true-dt: 2020-07-05
 author: "Matheus Facure"
 ---
 
