@@ -4,8 +4,8 @@ tags: [Econ]
 comments: true
 title: 6 - The Unreasonable Effectiveness of Linear Regression
 subtitle: Coming Soon
-date: 2020-06-28
-true-dt: 2020-06-28
+date: 2020-07-05
+true-dt: 2020-07-05
 author: "Matheus Facure"
 ---
 
