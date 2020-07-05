@@ -4,8 +4,8 @@ tags: [Econ]
 comments: true
 title: 15 - Synthetic Control
 subtitle: Coming Soon
-date: 2020-07-05
-true-dt: 2020-07-05
+date: 2020-07-07
+true-dt: 2020-07-07
 author: "Matheus Facure"
 ---
 

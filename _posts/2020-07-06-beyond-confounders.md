@@ -4,8 +4,8 @@ tags: [Econ]
 comments: true
 title: 7 - Beyond Confounders
 subtitle: Coming Soon
-date: 2020-07-05
-true-dt: 2020-07-05
+date: 2020-07-06
+true-dt: 2020-07-06
 author: "Matheus Facure"
 ---
 
