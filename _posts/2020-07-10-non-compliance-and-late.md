@@ -4,8 +4,8 @@ tags: [Econ]
 comments: true
 title: 9 - Instrumental Variables
 subtitle: Coming Soon
-date: 2020-07-07
-true-dt: 2020-07-07
+date: 2020-07-10
+true-dt: 2020-07-10
 author: "Matheus Facure"
 ---
 
