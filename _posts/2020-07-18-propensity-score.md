@@ -4,8 +4,8 @@ tags: [Econ]
 comments: true
 title: 11 - Propensity Score
 subtitle: Coming Soon
-date: 22020-07-07
-true-dt: 2020-07-07
+date: 22020-07-18
+true-dt: 2020-07-18
 author: "Matheus Facure"
 ---
 
