@@ -14,7 +14,7 @@ author: "Matheus Facure"
 In the previous session, we saw why and how association is different from causation. We also saw what is required to make association be causation.
 
 $$
-E[Y|T=1] - E[Y|T=0] = \underbrace{E[Y_1 - Y_0|T=1]}_{ATET} + \underbrace{\{ E[Y_0|T=0] - E[Y_0|T=1] \}}_{BIAS}
+E[Y|T=1] - E[Y|T=0] = \underbrace{E[Y_1 - Y_0|T=1]}_{ATET} + \underbrace{\{ E[Y_0|T=1] - E[Y_0|T=0] \}}_{BIAS}
 $$
 
 
