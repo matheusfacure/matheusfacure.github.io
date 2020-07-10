@@ -275,7 +275,7 @@ Also, if the treated and the untreated only differ on the treatment itself, that
 We have that
 
 $$
-E[Y_1 - Y_0|T=1] = E[Y_1|T=1] - E[Y_1|T=0] = E[Y_1|T=1] - E[Y_0|T=0] = E[Y|T=1] - E[Y|T=0]
+E[Y_1 - Y_0|T=1] = E[Y_1|T=1] - E[Y_0|T=1] = E[Y_1|T=1] - E[Y_1|T=1] = E[Y|T=1] - E[Y|T=0]
 $$
 
 Hence, in this case, the **difference in mean IS the causal effect**:
