@@ -119,7 +119,7 @@ As a final example, try to figure out some independence and dependence relations
 Knowing about causal graphical models enables us to understand the problems that arise in causal inference. As we've seen, the problem always boils down to bias. 
 
 $$
-E[Y|T=1] - E[Y|T=0] = \underbrace{E[Y_1 - Y_0|T=1]}_{ATET} + \underbrace{\{ E[Y_0|T=0] - E[Y_0|T=1] \}}_{BIAS}
+E[Y|T=1] - E[Y|T=0] = \underbrace{E[Y_1 - Y_0|T=1]}_{ATET} + \underbrace{\{ E[Y_0|T=1] - E[Y_0|T=0] \}}_{BIAS}
 $$
 
 Graphical models allow us to diagnose which bias we are dealing with and what are the tools we need to correct for them.
@@ -165,7 +165,7 @@ Imagine that with the help of some miracle you are finally able to randomize edu
 ![svg](/img/econ/graphs/output_18_0.svg)
 
 
-To demonstrate why this is the case if investments and education takes only 2 values. Either people invest or not. They are either educated or not. Initially, when we don't control for investments, the bias term is zero \\(E[Y_0\|T=0] - E[Y_0\|T=1] = 0\\) because the education was randomised. This means that the wage people would have in the case they didn't receive education \\(Wage_0\\) is the same if they do or don't receive the education treatment. But what happens if we condition on investments?
+To demonstrate why this is the case if investments and education takes only 2 values. Either people invest or not. They are either educated or not. Initially, when we don't control for investments, the bias term is zero \\(E[Y_0\|T=1] - E[Y_0\|T=0] = 0\\) because the education was randomised. This means that the wage people would have in the case they didn't receive education \\(Wage_0\\) is the same if they do or don't receive the education treatment. But what happens if we condition on investments?
 
 Looking at those that invest, we probably have the case that \\(E[Y_0\|T=0, I=1] > E[Y_0\|T=1, I=1]\\). In words, among those that invest, those that manage to do so even without education are more independent of education to achieve high earnings. For this reason, the wage those people have, \\(Wage_0\|T=0\\), is probably higher than the wage the educated group would have in the case that they didn't had education, \\(Wage_0\|T=1\\). A similar reasoning can be applied to those that don't invest, where we also probably have \\(E[Y_0\|T=0, I=0] > E[Y_0\|T=1, I=0]\\). Those that don't invest even with education, probably would have a lower wage, had they not got the education, than those that didn't invest but also didn't have education. 
 
@@ -181,7 +181,7 @@ A similar thing happens when we condition on a mediator of the treatment. A medi
 ![svg](/img/econ/graphs/output_22_0.svg)
 
 
-To give a potential outcome argument, we know that, due to randomisation, the bias is zero \\(E[Y_0\|T=0] - E[Y_0\|T=1] = 0\\). However, if we condition on the white collar individuals, we have that \\(E[Y_0\|T=0, WC=1] > E[Y_0\|T=1, WC=1]\\). That is because those that manage to get a white collar job even without education are probably more hard working than those that required the help of education to get the same job. With the same reasoning, \\(E[Y_0\|T=0, WC=0] > E[Y_0\|T=1, WC=0]\\) because those that didn't get a white collar job even with education are probably less hard working than those that didn't, but also didn't have any education. 
+To give a potential outcome argument, we know that, due to randomisation, the bias is zero \\(E[Y_0\|T=1] - E[Y_0\|T=0] = 0\\). However, if we condition on the white collar individuals, we have that \\(E[Y_0\|T=0, WC=1] > E[Y_0\|T=1, WC=1]\\). That is because those that manage to get a white collar job even without education are probably more hard working than those that required the help of education to get the same job. With the same reasoning, \\(E[Y_0\|T=0, WC=0] > E[Y_0\|T=1, WC=0]\\) because those that didn't get a white collar job even with education are probably less hard working than those that didn't, but also didn't have any education. 
 
 In our case, conditioning on the mediator induces a negative bias. It makes the effect of education seem lower than it actually is. This is the case because the causal effect is positive. In the effect where negative, conditioning on a mediator would have a positive bias. In all cases, this sort of conditioning makes the effect look weaker than it is. 
 
