@@ -32,7 +32,6 @@ At first, you might think that this is no big deal. Instead of using treatment a
 ![svg](/img/econ/late/output_2_0.svg)
 
 
-
 Up on the causal graph, you have the push assignment. This is random by design, so nothing is causing it. Then, you have a node for if the push was delivered. Not everyone that was assigned to receive the push did it, so you have non compliance here. More specifically, you have some never takers: those that don't receive the treatment even if assigned to it. You also have reasons to suspect that this non compliance is not simply by chance. Since that people with older phones are the one that don't get the push, you can argue that income is also causing push delivery. Finally, you have the outcome variable, in app purchase. Keep in mind that we don't know income, so we can't control for it. With this in mind, let's examine what would happen if we simply used the push assigned as the treatment variable and what would happen if we used push delivered as the treatment. 
 
 In the first case, we would estimate the causal effect by the following difference in means:
