@@ -48,13 +48,7 @@ data.sample(5, random_state=5)
       <th>schoolid</th>
       <th>intervention</th>
       <th>achievement_score</th>
-      <th>success_expect</th>
-      <th>ethnicity</th>
-      <th>gender</th>
-      <th>frst_in_family</th>
-      <th>school_urbanicity</th>
-      <th>school_mindset</th>
-      <th>school_achievement</th>
+      <th>...</th>
       <th>school_ethnic_minority</th>
       <th>school_poverty</th>
       <th>school_size</th>
@@ -66,13 +60,7 @@ data.sample(5, random_state=5)
       <td>73</td>
       <td>1</td>
       <td>1.480828</td>
-      <td>5</td>
-      <td>1</td>
-      <td>2</td>
-      <td>0</td>
-      <td>1</td>
-      <td>-0.462945</td>
-      <td>0.652608</td>
+      <td>...</td>
       <td>-0.515202</td>
       <td>-0.169849</td>
       <td>0.173954</td>
@@ -82,13 +70,7 @@ data.sample(5, random_state=5)
       <td>76</td>
       <td>0</td>
       <td>-0.987277</td>
-      <td>5</td>
-      <td>13</td>
-      <td>1</td>
-      <td>1</td>
-      <td>4</td>
-      <td>0.334544</td>
-      <td>0.648586</td>
+      <td>...</td>
       <td>-1.310927</td>
       <td>0.224077</td>
       <td>-0.426757</td>
@@ -98,13 +80,7 @@ data.sample(5, random_state=5)
       <td>4</td>
       <td>0</td>
       <td>-0.152340</td>
-      <td>5</td>
-      <td>2</td>
-      <td>2</td>
-      <td>1</td>
-      <td>0</td>
-      <td>-2.289636</td>
-      <td>0.190797</td>
+      <td>...</td>
       <td>0.875012</td>
       <td>-0.724801</td>
       <td>0.761781</td>
@@ -114,13 +90,7 @@ data.sample(5, random_state=5)
       <td>67</td>
       <td>0</td>
       <td>0.358336</td>
-      <td>6</td>
-      <td>14</td>
-      <td>1</td>
-      <td>0</td>
-      <td>4</td>
-      <td>-1.115337</td>
-      <td>1.053089</td>
+      <td>...</td>
       <td>0.315755</td>
       <td>0.054586</td>
       <td>1.862187</td>
@@ -130,21 +100,15 @@ data.sample(5, random_state=5)
       <td>16</td>
       <td>1</td>
       <td>1.360920</td>
-      <td>6</td>
-      <td>4</td>
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
-      <td>-0.538975</td>
-      <td>1.433826</td>
+      <td>...</td>
       <td>-0.033161</td>
       <td>-0.982274</td>
       <td>1.591641</td>
     </tr>
   </tbody>
 </table>
+<p>5 rows × 13 columns</p>
 </div>
-
 
 
 Although the study was randomised, it doesn't seem to be the case that this data is free from confounding. If we look at the additional features, we will notice that they vary systematically between treatment and control. One possible reason for this is that the treatment variable is measured by the student's receipt of the seminar. So, although the opportunity to participate was random, participation itself is not. We are here dealing with a case of non-compliance here. One evidence of this is how the student's success expectation is correlated with the participation in the seminar. Students with higher self-reported participation are more likely to have joined the growth mindset seminar.
