@@ -12,7 +12,7 @@ author: "Matheus Facure"
 # Why Bother?
 
 
-## Data Science is Not What it Used to (or it Finaly Is).
+## Data Science is Not What it Used to (or It Finally Is).
 
 Data Scientist has been labeled [The Sexiest Job of the 21st Century](https://hbr.org/2012/10/data-scientist-the-sexiest-job-of-the-21st-century) by Harvard Business Review. This was no empty statement. For a decade now, Data Scientist has been at the spotlight. AI experts had [salaries that rivaled those of sports superstars](https://www.economist.com/business/2016/04/02/million-dollar-babies). In the search for fame and fortune, hundreds of young professionals entered into what seemed a frenetic golden rush to get the Data Science title as quickly as possible. Whole new industries sprang around the hype. Miraculous teaching methods could make you a Data Science without requiring you to look at a single math formula. Consulting specialists promised millions if your company could unlock the potential of data. AI or, Machine Learning, has been called the new electricity and data, the new oil. 
 
