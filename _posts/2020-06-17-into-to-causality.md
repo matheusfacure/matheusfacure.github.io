@@ -286,7 +286,7 @@ $$
 
 Once again, this is so important that I think it is worth going over it again, now with pretty pictures. If we do simple an average comparison between the treatment and the untreated group, this is what we get (blue dots didn't receive the treatment, that is, the tablet):
 
-![img](/img/econ/intro/anatomy1.png)
+<img class="img-responsive center-block" src="/img/econ/intro/anatomy1.png" style="width: 75%;" alt=""/>
 
 Notice how the difference in outcomes between the two groups can the can have two causes
 
@@ -295,17 +295,17 @@ Notice how the difference in outcomes between the two groups can the can have tw
 
 The true treatment effect can only be obtained if we had God-like powers to observe the potential outcome, like in the left figure below. The individual treatment effect is the difference between the unit's outcome and another theoretical outcome that same unit would have in case it got the alternative treatment. These are the counterfactual outcomes and are denoted in light color.
 
-![img](/img/econ/intro/anatomy2.png)
+<img class="img-responsive center-block" src="/img/econ/intro/anatomy2.png" style="width: 100%;" alt=""/>
 
 In the left plot, we depicted what is the bias that we've talked about before. We get the bias if we set everyone to not receive the treatment. In this case, we are only left with the \\(T_0\\) potential outcome. Then, we see how the treated and untreated groups differ. If they do, it means that something other than the treatment is causing the treated and untreated to be different. This something is the bias and is what shadows the true treatment effect.
 
 Now, contrast this with a hypothetical situation where there is no bias. Suppose that tablets are randomly assigned to schools. In this situation, rich and poor schools have the same chance of receiving the treatment. Treatment would be well distributed across all the tuition spectrum.
 
-![img](/img/econ/intro/anatomy3.png)
+<img class="img-responsive center-block" src="/img/econ/intro/anatomy3.png" style="width: 75%;" alt=""/>
 
 In this case, the difference in the outcome between treated and untreated IS the average causal effect. This happens because there is no other source of difference between treatment and untreated other than the treatment itself. So all the differences we see must be attributed to it. Another way to say this is that there is no bias.
 
-![img](/img/econ/intro/anatomy4.png)
+<img class="img-responsive center-block" src="/img/econ/intro/anatomy4.png" style="width: 100%;" alt=""/>
 
 If we set everyone to not receive the treatment in such a way that we only observe the \\(Y_0\\)s, we would find no difference between the treated and untreated groups. That is causal inference is all about. Finding clever ways removing bias so that all the difference we see between treated and untreated is the average treatment effect.
 
