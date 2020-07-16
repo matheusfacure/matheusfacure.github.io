@@ -15,7 +15,7 @@ First and foremost, you might be wondering: what's in it for me? Here is what:
 
 ## Data Science is Not What it Used to (or it Finally Is).
 
-Data Scientist has been labeled [The Sexiest Job of the 21st Century](https://hbr.org/2012/10/data-scientist-the-sexiest-job-of-the-21st-century) by Harvard Business Review. This was no empty statement. For a decade now, Data Scientist has been at the spotlight. AI experts had [salaries that rivaled those of sports superstars](https://www.economist.com/business/2016/04/02/million-dollar-babies). In the search for fame and fortune, hundreds of young professionals entered into what seemed a frenetic golden rush to get the Data Science title as quickly as possible. Whole new industries sprang around the hype. Miraculous teaching methods could make you a Data Science without requiring you to look at a single math formula. Consulting specialists promised millions if your company could unlock the potential of data. AI or, Machine Learning, has been called the new electricity and data, the new oil. 
+Data Scientist has been labeled [The Sexiest Job of the 21st Century](https://hbr.org/2012/10/data-scientist-the-sexiest-job-of-the-21st-century) by Harvard Business Review. This was no empty statement. For a decade now, Data Scientist has been at the spotlight. AI experts had [salaries that rivaled those of sports superstars](https://www.economist.com/business/2016/04/02/million-dollar-babies). In the search for fame and fortune, hundreds of young professionals entered into what seemed a frenetic golden rush to get the Data Science title as quickly as possible. Whole new industries sprang around the hype. Miraculous teaching methods could make you a Data Scientist without requiring you to look at a single math formula. Consulting specialists promised millions if your company could unlock the potential of data. AI or, Machine Learning, has been called the new electricity and data, the new oil. 
 
 Meanwhile, we kind of forgot about those that have been doing "old fashioned" science with data all along. During all this time, economists were trying to answer what is the true impact of education on one's earnings, biostatisticians were trying to understand if saturated fat led to higher chance of heart attack and psychologists were trying to understand if words of affirmation led indeed to a happier marriage. If we were to be completely honest, data scientist is not a recent field. We are simply aware of it just now due to the massive amount of free marketing the media has provided.
 
@@ -66,7 +66,7 @@ T_i=\begin{cases}
 \end{cases}
 $$
 
-The treatment here doesn't need to be a medicine or anything from the medical field. Istead, it is just a term we will use to denote some intervention for which we want to know the effect. In our case, the treatment is giving tablets to students. As a side note, you might sometimes see \\(D\\) instead of \\(T\\) to denote the treatment. The reason is because we sometimes also use \\(T\\) for time. Don't let this discourage you.
+The treatment here doesn't need to be a medicine or anything from the medical field. Istead, it is just a term we will use to denote some intervention for which we want to know the effect. In our case, the treatment is giving tablets to students. As a side note, you might sometimes see \\(D\\) instead of \\(T\\) to denote the treatment.
 
 Now, let's call \\(Y_i\\) the observed outcome variable for unit i.
 
@@ -92,7 +92,7 @@ As for the notation, we use an additional subscript:
 
 \\(Y_{0i}\\) is the potential outcome for unit i without the treatment. 
 
-\\(Y_{1i}\\) is the potential outcome for unit i with the treatment.
+\\(Y_{1i}\\) is the potential outcome **for the same** unit i with the treatment.
 
 Sometimes you might see potential outcomes represented as functions \\(Y_i(t)\\), so beware. \\(Y_{0i}\\) could be \\(Y_i(0)\\) and \\(Y_{1i}\\) could be \\(Y_i(1)\\). Here, we will use the subscript notation most of the time.
 
@@ -174,11 +174,11 @@ The \\(ATE\\) here would be the mean of the last column, that is, of the treatme
 
 \\(ATE=(-50 + 0 - 200 + 50)/4 = -50\\)
 
-The \\(ATET\\) here would be the mean of the last column when \\(T=1\\):
+This would mean that tablets reduced the academic performance of students, on average, by 50 points. The \\(ATET\\) here would be the mean of the last column when \\(T=1\\):
 
 \\(ATET=(- 200 + 50)/2 = -75\\)
 
-Now, of course we can never know this. In reality, the table above would look like this:
+This is saying that, for the schools that were treated, the tablets reduced the academic performance of students, on average, by 75 points. Now, of course we can never know this. In reality, the table above would look like this:
 
 
 <div>
@@ -241,9 +241,9 @@ This is surely not ideal, you might say, but can't I still take the mean of the 
 
 ## Bias
 
-Bias is what makes association different from causation. Fortunately, it too can be easily understood with our intuition. Let's recap our tablets in the classroom example. When confronted with the claim that schools that give tablets to their kids go better on tests score, we can rebut it by saying those schools will probably do better anyway, even without the tables. That is because they probably have more money than the other schools, and hence can pay better teachers, afford better classrooms, and so on. In other words, it is the case that treated schools (with tablets) are not comparable with untreated schools. 
+Bias is what makes association different from causation. Fortunately, it too can be easily understood with our intuition. Let's recap our tablets in the classroom example. When confronted with the claim that schools that give tablets to their kids do better on tests score, we can rebut it by saying those schools will probably do better anyway, even without the tables. That is because they probably have more money than the other schools, and hence can pay better teachers, afford better classrooms, and so on. In other words, it is the case that treated schools (with tablets) are not comparable with untreated schools. 
 
-To say this in potential outcome notation is to say that \\(Y_0\\) of the treated is different from the \\(Y_0\\) of the untreated. Remember that the \\(Y_0\\) of the treated **is counterfactual**. We can't observe it, but we can reason about it. In this particular case, we can even leverage our understanding of how the world works to go even further. We can say that, probably, \\(Y_0\\) of the treated is bigger than \\(Y_0\\) of the untreated schools. That is because schools that can afford to give tablets to their kids can afford other factors that can contribute to better test scores. Let this sink in for a moment. It takes some time to get used to talking about potential outcomes. Read this paragraph again and make sure you understand it.
+To say this in potential outcome notation is to say that \\(Y_0\\) of the treated is different from the \\(Y_0\\) of the untreated. Remember that the \\(Y_0\\) of the treated **is counterfactual**. We can't observe it, but we can reason about it. In this particular case, we can even leverage our understanding of how the world works to go even further. We can say that, probably, \\(Y_0\\) of the treated is bigger than \\(Y_0\\) of the untreated schools. That is because schools that can afford to give tablets to their kids can also afford other factors that contribute to better test scores. Let this sink in for a moment. It takes some time to get used to talking about potential outcomes. Read this paragraph again and make sure you understand it.
 
 With this in mind, we can show with very simple math why is it the case that association is not causation. Association is measured by \\(E[Y\|T=1] - E[Y\|T=0]\\). In our example, this is the average test score for the schools with tablets minus the average test score for those without it. On the other hand, causation is measured by \\(E[Y_1 - Y_0]\\).
 
@@ -265,9 +265,9 @@ $$
 E[Y|T=1] - E[Y|T=0] = \underbrace{E[Y_1 - Y_0|T=1]}_{ATET} + \underbrace{\{ E[Y_0|T=1] - E[Y_0|T=0] \}}_{BIAS}
 $$
 
-This simple piece of math encompasses all the problems we will encounter in causal questions. I cannot stress how important it is that you understand every aspect of it. Let's break it down into some of its implications. First, it tells why association is not causation. As we can see, association is equal to the treatment effect on the treated plus a bias term. **The bias is given by how the treated and control group differ before the treatment, that is, in case neither of them has received the treatment**. We can now say precisely why we are suspicious when someone tells us that tablets in the classroom boost academic performance. We think that, is this example, \\(E[Y_0\|T=0] < E[Y_0\|T=1]\\), that is, schools that can afford to give tablets to their kids are better than those that can't, **regardless of the tablets treatment**.
+This simple piece of math encompasses all the problems we will encounter in causal questions. I cannot stress how important it is that you understand every aspect of it. If you're ever forced to tattoo something on your arm, this equation should be a good candidate for it. It's something to hold onto very dearly and really understand what is telling us, like some sacred text that can be interpreted 100 different ways. In fact, let's take a deeper look. Let's break it down into some of its implications. First, this equation tells why association is not causation. As we can see, association is equal to the treatment effect on the treated plus a bias term. **The bias is given by how the treated and control group differ before the treatment, that is, in case neither of them has received the treatment**. We can now say precisely why we are suspicious when someone tells us that tablets in the classroom boost academic performance. We think that, is this example, \\(E[Y_0\|T=0] < E[Y_0\|T=1]\\), that is, schools that can afford to give tablets to their kids are better than those that can't, **regardless of the tablets treatment**.
 
-Now why does this happen? We will talk more about that once we enter confounding, but for now you can think of bias arising because many things we can't control are changing once the treatment changes. The treated and untreated schools don't differ only on the tablets. They also differ on the tuition cost, location, teachers… 
+Now why does this happen? We will talk more about that once we enter confounding, but for now you can think of bias arising because many things we can't control are changing together with the treatment. As a result, the treated and untreated schools don't differ only on the tablets. They also differ on the tuition cost, location, teachers...
 For us to say that tablets in the classroom increase academic performance, we would need for schools with and without them to be, on average, similar to each other.
 
 
@@ -285,7 +285,11 @@ Also, if the treated and the untreated only differ on the treatment itself, that
 We have that the causal impact on the treated is the same as in the untreated (because they are very similar).
 
 $$
-E[Y_1 - Y_0|T=1] = E[Y_1|T=1] - E[Y_0|T=1] = E[Y_1|T=1] - E[Y_1|T=1] = E[Y|T=1] - E[Y|T=0]
+\begin{align}
+E[Y_1 - Y_0|T=1] &= E[Y_1|T=1] - E[Y_0|T=1] \\
+&= E[Y_1|T=1] - E[Y_0|T=0] \\
+&= E[Y|T=1] - E[Y|T=0]
+\end{align}
 $$
 
 Hence, in this case, the **difference in mean BECOMES the causal effect**:
@@ -294,7 +298,7 @@ $$
 E[Y|T=1] - E[Y|T=0] = ATE = ATET
 $$
 
-Once again, this is so important that I think it is worth going over it again, now with pretty pictures. If we do simple an average comparison between the treatment and the untreated group, this is what we get (blue dots didn't receive the treatment, that is, the tablet):
+Once again, this is so important that I think it is worth going over it again, now with pretty pictures. If we do a simple average comparison between the treatment and the untreated group, this is what we get (blue dots didn't receive the treatment, that is, the tablet):
 
 
 <img class="img-responsive center-block" src="/img/econ/intro/anatomy1.png" style="width: 75%;" alt=""/>
@@ -318,7 +322,11 @@ In this case, the difference in the outcome between treated and untreated IS the
 
 <img class="img-responsive center-block" src="/img/econ/intro/anatomy4.png" style="width: 100%;" alt=""/>
 
-If we set everyone to not receive the treatment in such a way that we only observe the \\(Y_0\\)s, we would find no difference between the treated and untreated groups. That's what causal inference is all about. Finding clever ways of removing bias so that all the difference we see between treated and untreated is the average treatment effect.
+If we set everyone to not receive the treatment in such a way that we only observe the \\(Y_0\\)s, we would find no difference between the treated and untreated groups. 
+
+This is the herculean task causal inference is all about. It is about finding clever ways of removing bias, of making the treated and the untreated comparable so that all the difference we see between them is only the average treatment effect. Ultimately, causal inference is about figuring out how the world really works, stripped of all delusions and misinterpretations. And now that we understand this, we can move forward to mastering some of the most powerful methods to remove bias, the weapons of the Brave and True to identify the causal effect. 
+
+<img class="img-responsive center-block" src="/img/econ/brave-and-true.png" style="width: 100%;" alt=""/>
 
 # Key Ideas
 
