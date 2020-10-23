@@ -3,23 +3,16 @@ layout: page
 title: "Econometric and Causal Inference"
 ---
 
-
-{% for post in site.posts reversed %}
-    {% if post.tags contains 'Econ' %}
-        <hr>
-        <div class="post-preview" style="margin-top: 2%;">
-            <a href="{{ post.url | prepend: site.baseurl }}">
-                <h2 class="post-title">            
-                    {{ post.title }}
-                </h2>
-                {% if post.subtitle %}
-                <h3 class="post-subtitle" style="font-weight: 300; font-size:20px; font-family: Helvetica;">
-                    {{ post.subtitle }}
-                </h3>
-                {% endif %}
-            </a>
-        </div>
-    {% endif %}
-{% endfor %}
+<div class="post-preview" style="margin-top: 2%;">
+    <a href="https://matheusfacure.github.io/python-causality-handbook/landing-page.html">
+        <h2 class="post-title">            
+          Causal Inference for the Brave and True
+        </h2>
+        <h3 class="post-subtitle" style="font-weight: 300; font-size:20px; font-family: Helvetica;">
+          A light-hearted yet rigorous approach to learning impact estimation and sensitivity analysis.
+        </h3>
+               
+    </a>
+</div>
 
 <hr>
