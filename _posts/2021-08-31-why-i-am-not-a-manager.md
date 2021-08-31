@@ -15,6 +15,8 @@ August was my last month as a Data Scientist Manager at a multibillion dollar ne
 
 I'll try to walk through the thought process that led me to choose the IC role so that it might help others facing a similar decision. But mostly, I write for myself, as it helps me organize my thoughts and reflect on this new phase to come. 
 
+<img class="img-responsive center-block thumbnail" src="/img/adventure.png" alt="meme"/>
+
 ## You Can't Study your Way out of Management Problems
 
 I've always been good at accumulating knowledge. I can sit for hours reading and writing and I find it refreshing. Up until I became a manager, I could study my way out of most of my problems. It was like that at school and university. It was like that as I've started to solve business problems within a company. There were exceptions, of course. Relationship with a significant other is a noteworthy one, but let's not get into that. The point is, as an IC, there is usually a clear path to solving a problem: lots of careful study, followed by an ideally simple implementation. 
