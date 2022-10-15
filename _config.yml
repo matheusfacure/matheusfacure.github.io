@@ -1,4 +1,4 @@
-url: https://matheusfacure.github.io/
+url: https://anneacso.github.io/
 
 # Site settings
 title: "Anne Oliveira"
@@ -8,7 +8,7 @@ description:
 
 # Team names, titles and social links
 people:
-- name: Matheus Facure
+- name: Anne Oliveira
   pic: 1
   social:
     - title: twitter
@@ -21,11 +21,11 @@ people:
 # Social networks usernames (many more available: google-plus, flickr, dribbble, pinterest, instagram, tumblr, linkedin, etc.)
 social:
   - title: linkedin
-    url: http://linkedin.com/in/matheus-facure-7b0099117
+    url: https://www.linkedin.com/in/anneoliveira88588/
   - title: github
-    url: https://github.com/matheusfacure
+    url: https://anneacso.github.io/
   - title: instagram
-    url: https://www.instagram.com/matfacure/
+    url: https://www.instagram.com/anne_acso/?hl=pt
 
 
 # Build settings
